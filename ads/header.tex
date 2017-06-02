@@ -1,0 +1,169 @@
+%!TEX root = ../dokumentation.tex
+
+%
+% Nahezu alle Einstellungen koennen hier getaetigt werden
+%
+
+\RequirePackage[l2tabu, orthodox]{nag}	% weist in Commandozeile bzw. log auf veraltete LaTeX Syntax hin
+
+\documentclass[%
+	pdftex,
+	oneside,			% Einseitiger Druck.
+	12pt,				% Schriftgroesse
+	parskip=half,		% Halbe Zeile Abstand zwischen Absätzen.
+%	topmargin = 10pt,	% Abstand Seitenrand (Std:1in) zu Kopfzeile [laut log: unused]
+	headheight = 12pt,	% Höhe der Kopfzeile
+%	headsep = 30pt,	% Abstand zwischen Kopfzeile und Text Body  [laut log: unused]
+	headsepline,		% Linie nach Kopfzeile.
+	footsepline,		% Linie vor Fusszeile.
+	footheight = 16pt,	% Höhe der Fusszeile
+	abstracton,		% Abstract Überschriften
+	DIV=calc,		% Satzspiegel berechnen
+	BCOR=8mm,		% Bindekorrektur links: 8mm
+	headinclude=false,	% Kopfzeile nicht in den Satzspiegel einbeziehen
+	footinclude=false,	% Fußzeile nicht in den Satzspiegel einbeziehen
+	listof=totoc,		% Abbildungs-/ Tabellenverzeichnis im Inhaltsverzeichnis darstellen
+	toc=bibliography,	% Literaturverzeichnis im Inhaltsverzeichnis darstellen
+]{scrreprt}	% Koma-Script report-Klasse, fuer laengere Bachelorarbeiten alternativ auch: scrbook
+
+% Einstellungen laden
+\usepackage{xstring}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\newcommand{\einstellung}[1]{%
+  \expandafter\newcommand\csname #1\endcsname{}
+  \expandafter\newcommand\csname setze#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
+}
+\newcommand{\langstr}[1]{\einstellung{lang#1}}
+
+\input{ads/einstellungen_liste} % verfügbare Einstellungen
+\input{einstellungen} % lese Einstellungen
+
+\input{lang/strings} % verfügbare Strings
+\input{lang/\sprache} % Übersetzung einlesen
+
+% Einstellung der Sprache des Paketes Babel und der Verzeichnisüberschriften
+\iflang{de}{\usepackage[english, ngerman]{babel}}
+\iflang{en}{\usepackage[ngerman, english]{babel}} 
+
+
+%%%%%%% Package Includes %%%%%%%
+
+\usepackage[margin=\seitenrand,foot=1cm]{geometry}	% Seitenränder und Abstände
+\usepackage[activate]{microtype} %Zeilenumbruch und mehr
+\usepackage[onehalfspacing]{setspace}
+\usepackage{makeidx}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{longtable}
+\usepackage{enumitem}	% mehr Optionen bei Aufzählungen
+\usepackage{graphicx}
+\usepackage{pdfpages}   % zum Einbinden von PDFs
+\usepackage{xcolor} 	% für HTML-Notation
+\usepackage{float}
+\usepackage{array}
+\usepackage{calc}		% zum Rechnen (Bildtabelle in Deckblatt)
+\usepackage[right]{eurosym}
+\usepackage{wrapfig}
+\usepackage{pgffor} % für automatische Kapiteldateieinbindung
+\usepackage[perpage, hang, multiple, stable]{footmisc} % Fussnoten
+\usepackage[printonlyused]{acronym} % falls gewünscht kann die Option footnote eingefügt werden, dann wird die Erklärung nicht inline sondern in einer Fußnote dargestellt
+\usepackage{listings}
+
+% Notizen. Einsatz mit \todo{Notiz} oder \todo[inline]{Notiz}. 
+\usepackage[obeyFinal,backgroundcolor=yellow,linecolor=black]{todonotes}
+% Alle Notizen ausblenden mit der Option "final" in \documentclass[...] oder durch das auskommentieren folgender Zeile
+% \usepackage[disable]{todonotes}
+
+% Kommentarumgebung. Einsatz mit \comment{}. Alle Kommentare ausblenden mit dem Auskommentieren der folgenden und dem aktivieren der nächsten Zeile.
+\newcommand{\comment}[1]{\par {\bfseries \color{blue} #1 \par}} %Kommentar anzeigen
+% \newcommand{\comment}[1]{} %Kommentar ausblenden
+
+
+%%%%%% Configuration %%%%%
+
+%% Anwenden der Einstellungen
+
+\usepackage{\schriftart}
+\ladefarben{}
+
+% Titel, Autor und Datum
+\title{\titel}
+\author{\autor}
+\date{\datum}
+
+% PDF Einstellungen
+\usepackage[%
+	pdftitle={\titel},
+	pdfauthor={\autor},
+	pdfsubject={\arbeit},
+	pdfcreator={pdflatex, LaTeX with KOMA-Script},
+	pdfpagemode=UseOutlines, 		% Beim Oeffnen Inhaltsverzeichnis anzeigen
+	pdfdisplaydoctitle=true, 		% Dokumenttitel statt Dateiname anzeigen.
+	pdflang={\sprache}, 			% Sprache des Dokuments.
+]{hyperref}
+
+% (Farb-)einstellungen für die Links im PDF
+\hypersetup{%
+	colorlinks=true, 		% Aktivieren von farbigen Links im Dokument
+	linkcolor=LinkColor, 	% Farbe festlegen
+	citecolor=LinkColor,
+	filecolor=LinkColor,
+	menucolor=LinkColor,
+	urlcolor=LinkColor,
+	linktocpage=true, 		% Nicht der Text sondern die Seitenzahlen in Verzeichnissen klickbar
+	bookmarksnumbered=true 	% Überschriftsnummerierung im PDF Inhalt anzeigen.
+}
+% Workaround um Fehler in Hyperref, muss hier stehen bleiben
+\usepackage{bookmark} %nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
+
+% Schriftart in Captions etwas kleiner
+\addtokomafont{caption}{\small}
+
+% Literaturverweise (sowohl deutsch als auch englisch)
+\iflang{de}{%
+\usepackage[
+	backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
+	bibwarn=true,
+	bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
+	sortlocale=de_DE,
+	style=\zitierstil,
+]{biblatex}
+}
+\iflang{en}{%
+\usepackage[
+	backend=biber,		% empfohlen. Falls biber Probleme macht: bibtex
+	bibwarn=true,
+	bibencoding=utf8,	% wenn .bib in utf8, sonst ascii
+	sortlocale=en_US,
+	style=\zitierstil,
+]{biblatex}
+}
+
+\ladeliteratur{}
+
+% Glossar
+\usepackage[nonumberlist,toc]{glossaries}
+
+%%%%%% Additional settings %%%%%%
+
+% Hurenkinder und Schusterjungen verhindern
+% http://projekte.dante.de/DanteFAQ/Silbentrennung
+\clubpenalty = 10000 % schließt Schusterjungen aus (Seitenumbruch nach der ersten Zeile eines neuen Absatzes)
+\widowpenalty = 10000 % schließt Hurenkinder aus (die letzte Zeile eines Absatzes steht auf einer neuen Seite)
+\displaywidowpenalty=10000
+
+% Bildpfad
+\graphicspath{{images/}}
+
+% Einige häufig verwendete Sprachen
+\lstloadlanguages{PHP,Python,Java,C,C++,bash}
+\listingsettings{}
+% Umbennung des Listings
+\renewcommand\lstlistingname{\langlistingname}
+\renewcommand\lstlistlistingname{\langlistlistingname}
+\def\lstlistingautorefname{\langlistingautorefname}
+
+% Abstände in Tabellen
+\setlength{\tabcolsep}{\spaltenabstand}
+\renewcommand{\arraystretch}{\zeilenabstand}

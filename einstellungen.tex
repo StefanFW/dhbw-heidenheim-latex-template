@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Einstellungen
+%
+% Hier können alle relevanten Einstellungen für diese Arbeit gesetzt werden.
+% Dazu gehören Angaben u.a. über den Autor sowie Formatierungen.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aktuell sind Deutsch und Englisch unterstützt.
+%% Es werden nicht nur alle vom Dokument erzeugten Texte in
+%% der entsprechenden Sprache angezeigt, sondern auch weitere
+%% Aspekte angepasst, wie z.B. die Anführungszeichen und
+%% Datumsformate.
+\setzesprache{de} % oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Angaben  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Die meisten der folgenden Daten werden auf dem
+%% Deckblatt angezeigt, einige auch im weiteren Verlauf
+%% des Dokuments.
+\setzematrikelnr{1234510}
+\setzekurs{TINF2014MI}
+\setzetitel{Dies ist der Titel der Bachelorarbeit und bitte ohne Rechtschreibfehler}
+\setzedatumAbgabe{Septemper 2017}
+\setzefirma{Firma GmbH}
+\setzefirmenort{Firmenort}
+\setzeabgabeort{Abgabeort}
+\setzeabschluss{Bachelor of Science}
+%Für MI immer \setzeabschluss{Bachelor of Science}
+%Für IA/IM bis INF2016: \setzeabschluss{Bachelor of Engineering}
+%ab INF2017 generell \setzeabschluss{Bachelor of Science}
+\setzestudiengang{Informatik}
+\setzedhbw{Heidenheim}
+\setzebetreuer{Dipl.-Ing.~(FH) Peter Pan}
+\setzegutachter{Prof. Dr.\ Rolf Assfalg}
+\setzezeitraum{12 Wochen}
+\setzearbeit{Bachelorarbeit}
+\setzeautor{Michael Lustig}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bei Fehlern während der Verarbeitung bitte in ads/header.tex bei der
+%% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
+%% einmal für jede Sprache), biber in bibtex ändern.
+\newcommand{\ladeliteratur}{%
+\addbibresource{bibliographie.bib}
+%\addbibresource{weitereDatei.bib}
+}
+%% Zitierstil
+%% siehe: http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf (3.3.1 Citation Styles)
+%% mögliche Werte z.B numeric-comp, alphabetic, 
+%% Weniger gut: authoryear, alphabetic-verb, 
+\setzezitierstil{alphabetic-verb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verschiedene Schriftarten
+% laut nag Warnung: palatino obsolete, use mathpazo, helvet (option scaled=.95), courier instead
+\setzeschriftart{lmodern} % palatino oder goudysans, lmodern, libertine
+
+%% Paket um Textteile drehen zu können
+%\usepackage{rotating}
+%% Paket um Seite im Querformat anzuzeigen
+%\usepackage{lscape}
+
+%% Seitenränder
+\setzeseitenrand{2.5cm}
+
+%% Abstand vor Kapitelüberschriften zum oberen Seitenrand
+\setzekapitelabstand{20pt}
+
+%% Spaltenabstand
+\setzespaltenabstand{10pt}
+%%Zeilenabstand innerhalb einer Tabelle
+\setzezeilenabstand{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verschiedenes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Farben (Angabe in HTML-Notation mit großen Buchstaben)
+\newcommand{\ladefarben}{%
+	\definecolor{LinkColor}{HTML}{00007A}
+	\definecolor{ListingBackground}{HTML}{FCF7DE}
+}
+%% Mathematikpakete benutzen (Pakete aktivieren)
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+
+%% Programmiersprachen Highlighting (Listings)
+\newcommand{\listingsettings}{%
+	\lstset{%
+		language=Java,			% Standardsprache des Quellcodes
+		numbers=left,			% Zeilennummern links
+		stepnumber=1,			% Jede Zeile nummerieren.
+		numbersep=5pt,			% 5pt Abstand zum Quellcode
+		numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
+		breaklines=true,		% Zeilen umbrechen wenn notwendig.
+		breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
+		postbreak=\space,		% Bei Leerzeichen umbrechen.
+		tabsize=2,				% Tabulatorgrösse 2
+		basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+		showspaces=false,		% Leerzeichen nicht anzeigen.
+		showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
+		extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+		captionpos=b,			% sets the caption-position to bottom
+		backgroundcolor=\color{ListingBackground}, % Hintergrundfarbe des Quellcodes setzen.
+		xleftmargin=0pt,		% Rand links
+		xrightmargin=0pt,		% Rand rechts
+		frame=single,			% Rahmen an
+		frameround=ffff,
+		rulecolor=\color{darkgray},	% Rahmenfarbe
+		fillcolor=\color{ListingBackground},
+		keywordstyle=\color[rgb]{0.133,0.133,0.6},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941}
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier können Ergänzungen zur Präambel vorgenommen werden (eigene Pakete, Einstellungen)
+
+
+
