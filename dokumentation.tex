@@ -1,0 +1,114 @@
+%%**************************************************************
+%% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
+%%
+%% Autor: Tobias Dreher, Yves Fischer
+%% Datum: 06.07.2011
+%%
+%% Autor: Michael Gruben
+%% Datum: 15.05.2013
+%%
+%% Autor: Markus Barthel
+%% Datum: 22.08.2014
+%%
+%% Überarbeitet: Prof. Dr. Rolf Assfalg
+%% Datum 23.03.2017
+%%
+%%**************************************************************
+
+\input{ads/header}
+
+%%%\makeglossaries
+\input{ads/glossary}
+
+\begin{document}
+
+	% Deckblatt
+	\begin{spacing}{1}
+		\input{ads/deckblatt}
+	\end{spacing}
+	\newpage
+
+	\pagenumbering{Roman}
+
+	% Sperrvermerk
+	\input{ads/sperrvermerk}
+	\newpage
+
+	% Erklärung
+	\input{ads/erklaerung}
+	\newpage
+
+	% Abstract
+	\input{ads/abstract}
+	\newpage
+
+	\pagestyle{plain}		% nur Seitenzahlen im Fuß
+	
+	\RedeclareSectionCommand[beforeskip=\kapitelabstand         ]{chapter} % stellt Abstand vor Kapitelüberschriften ein
+
+	% Inhaltsverzeichnis
+	\begin{spacing}{1.1}
+		\begingroup
+		
+			% auskommentieren für Seitenzahlen unter Inhaltsverzeichnis
+%%%			\renewcommand*{\chapterpagestyle}{empty}
+%%%			\pagestyle{empty}
+			
+			
+			\setcounter{tocdepth}{1}
+			%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+			%\setcounter{tocdepth}{2}
+			
+			\tableofcontents
+			\clearpage
+		\endgroup
+	\end{spacing}
+	\newpage
+
+	% Abkürzungsverzeichnis
+	\cleardoublepage
+%%%	\input{ads/acronyms}
+
+	% Abbildungsverzeichnis
+	\cleardoublepage
+	\listoffigures
+
+	%Tabellenverzeichnis
+	\cleardoublepage
+	\listoftables
+
+	% Quellcodeverzeichnis
+	\cleardoublepage
+	\lstlistoflistings
+	\cleardoublepage
+
+	\pagenumbering{arabic}
+	
+	\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
+
+	% Inhalt
+	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
+		\edef\FileName{content/\i kapitel}%
+			\IfFileExists{\FileName}{%
+				\input{\FileName}
+			}
+			{%
+				%file does not exist
+			}
+	}
+
+	\clearpage
+
+	% Literaturverzeichnis
+	\cleardoublepage
+	\printbibliography
+
+	% Glossar
+	\printglossary[style=altlist,title=\langglossar]
+	
+	% sonstiger Anhang
+	\clearpage
+	\appendix
+	\input{ads/appendix}
+	
+\end{document}
