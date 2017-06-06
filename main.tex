@@ -1,28 +1,18 @@
 %%**************************************************************
-%% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
 %%
-%% Autor: Tobias Dreher, Yves Fischer
-%% Datum: 06.07.2011
+%% DHBW Heidenheim - Template for Bachelor Thesis
 %%
-%% Autor: Michael Gruben
-%% Datum: 15.05.2013
-%%
-%% Autor: Markus Barthel
-%% Datum: 22.08.2014
-%%
-%% Überarbeitet: Prof. Dr. Rolf Assfalg
-%% Datum 23.03.2017
+%% Please have a look to readme.md
 %%
 %%**************************************************************
 
 \input{ads/header}
 
-%%%\makeglossaries
-\input{ads/glossary}
+\input{content/glossary}
 
 \begin{document}
 
-	% Deckblatt
+	% Cover
 	\begin{spacing}{1}
 		\input{ads/cover}
 	\end{spacing}
@@ -30,34 +20,30 @@
 
 	\pagenumbering{Roman}
 
-	% Sperrvermerk
-	\input{ads/restriction_notices}
+	% Restriction notices
+	\input{ads/restrictionNotices}
 	\newpage
 
-	% Erklärung
+	% Declaration
 	\input{ads/declaration}
 	\newpage
 
 	% Abstract
-	\input{ads/abstract}
+	\input{content/abstract}
 	\newpage
 
-	\pagestyle{plain}		% nur Seitenzahlen im Fuß
+        % only page number in footer
+	\pagestyle{plain}
 	
-	\RedeclareSectionCommand[beforeskip=\kapitelabstand         ]{chapter} % stellt Abstand vor Kapitelüberschriften ein
+	% space bevore chapter headline
+	\RedeclareSectionCommand[beforeskip=\kapitelabstand]{chapter}
 
-	% Inhaltsverzeichnis
+	% Contents
 	\begin{spacing}{1.1}
 		\begingroup
 		
-			% auskommentieren für Seitenzahlen unter Inhaltsverzeichnis
-%%%			\renewcommand*{\chapterpagestyle}{empty}
-%%%			\pagestyle{empty}
-			
-			
+		        % set subchapter depth
 			\setcounter{tocdepth}{1}
-			%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
-			%\setcounter{tocdepth}{2}
 			
 			\tableofcontents
 			\clearpage
@@ -65,50 +51,50 @@
 	\end{spacing}
 	\newpage
 
-	% Abkürzungsverzeichnis
+	% Acronyms
 	\cleardoublepage
-%%%	\input{ads/acronyms}
+        \input{content/acronyms}
 
-	% Abbildungsverzeichnis
+	% List of Figures
 	\cleardoublepage
 	\listoffigures
 
-	%Tabellenverzeichnis
+	%List of Tables
 	\cleardoublepage
 	\listoftables
 
-	% Quellcodeverzeichnis
+	% List of Listings
 	\cleardoublepage
 	\lstlistoflistings
 	\cleardoublepage
 
 	\pagenumbering{arabic}
 	
-	\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
+	\pagestyle{headings}
 
-	% Inhalt
+	 Content
 	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
-		\edef\FileName{content/\i kapitel}%
+		\edef\FileName{content/chapter/\i .tex}%
 			\IfFileExists{\FileName}{%
 				\input{\FileName}
 			}
 			{%
-				%file does not exist
+%				No chapter available
 			}
 	}
 
 	\clearpage
 
-	% Literaturverzeichnis
+	% Bibilography
 	\cleardoublepage
 	\printbibliography
 
 	% Glossar
 	\printglossary[style=altlist,title=\langglossar]
 	
-	% sonstiger Anhang
+	% Appendix
 	\clearpage
 	\appendix
-	\input{ads/appendix}
+	\input{content/appendix}
 	
 \end{document}
