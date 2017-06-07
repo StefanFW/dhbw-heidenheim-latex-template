@@ -28,6 +28,11 @@
   \IfStrEq{\documentLanguage}{#1}{#2}{}
 }
 
+% ifDocType comand definition
+\newcommand{\ifDocType}[2]{%
+  \IfStrEq{\documentType}{#1}{#2}{}
+}
+
 % Include general settings
 \input{settings/general} 
 
