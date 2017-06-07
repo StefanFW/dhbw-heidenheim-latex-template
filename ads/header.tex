@@ -47,7 +47,7 @@
 
 %%%%%%% Package Includes %%%%%%%
 
-\usepackage[margin=\seitenrand,foot=1cm]{geometry}
+\usepackage[margin=\margin,foot=1cm]{geometry}
 \usepackage[activate]{microtype}                                         
 \usepackage[onehalfspacing]{setspace}
 \usepackage{makeidx}
@@ -71,11 +71,11 @@
 \usepackage{lscape}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{\schriftart}
+\usepackage{\documentFont}
 \usepackage[%
-	pdftitle={\titel},
-	pdfauthor={\autor},
-	pdfsubject={\arbeit},
+	pdftitle={\documentTitle},
+	pdfauthor={\documentAuthor},
+	pdfsubject={\documentType},
 	pdfcreator={pdflatex, LaTeX with KOMA-Script},
 	pdfpagemode=UseOutlines,       % Show Contents while opening
 	pdfdisplaydoctitle=true, 		% Show document title instead of file name
@@ -85,11 +85,11 @@
 \usepackage[nonumberlist,toc]{glossaries}
 
 % Load colors
-\ladefarben{}
+\defineColors{}
 
 % Set Titel, Autor and Date
-\title{\titel}
-\author{\autor}
+\title{\documentTitle}
+\author{\documentAuthor}
 \date{\datum}
 
 
@@ -115,7 +115,7 @@
 	bibwarn=true,
 	bibencoding=utf8,	         % If .bib file is encoded with utf8, otherwise ascii
 	sortlocale=de_DE,
-	style=\zitierstil,
+	style=\quoteStyle,
 ]{biblatex}
 }
 \iflang{en}{%
@@ -124,7 +124,7 @@
 	bibwarn=true,
 	bibencoding=utf8,        % If .bib file is encoded with utf8, otherwise ascii
 	sortlocale=en_US,
-	style=\zitierstil,
+	style=\quoteStyle,
 ]{biblatex}
 }
 
@@ -144,10 +144,10 @@
 
 \listingsettings{}
 % Rename Listings
-\renewcommand\lstlistingname{\langlistingname}
-\renewcommand\lstlistlistingname{\langlistlistingname}
-\def\lstlistingautorefname{\langlistingautorefname}
+\renewcommand\lstlistingname{\listingPhrase}
+\renewcommand\lstlistlistingname{\listListingPhrase}
+\def\lstlistingautorefname{\authorListingPhrase}
 
 % Spaces in tables
-\setlength{\tabcolsep}{\spaltenabstand}
-\renewcommand{\arraystretch}{\zeilenabstand}
+\setlength{\tabcolsep}{\tableColumnMargin}
+\renewcommand{\arraystretch}{\tableRowMargin}
