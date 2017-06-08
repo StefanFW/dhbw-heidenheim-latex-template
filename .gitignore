@@ -222,3 +222,6 @@ TSWLatexianTemp*
 
 # TeXnicle
 *.texnicle
+
+images/cover/Thumbs.db
+images/Thumbs.db
