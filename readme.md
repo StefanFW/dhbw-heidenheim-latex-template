@@ -3,11 +3,11 @@
 Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW Heidenheim geeignet.
 
 **Inhalt:**
-* [Templatestrucktur](#templatestrucktur)
+* [Templatestrucktur](#templatestruktur)
 * [Komponenten einer Wissenschaftlichen Arbeit](#komponenten einer wissenschaftlichen arbeit)
 * [Contributors](#contributors)
 
-## Templatestrucktur
+## Templatestruktur
 
 Das Template ist im Wesentlichen in 6 Teile unterteil:
 
