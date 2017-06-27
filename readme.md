@@ -83,26 +83,28 @@ Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 
 ## Acronyms
 
-nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
-Verwendung: 
-		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
-		\acs{Abk.}   -->  fügt die Abkürzung ein
-		\acf{Abk.}   --> fügt die Abkürzung UND die Erklärung ein
-		\acl{Abk.}   --> fügt nur die Erklärung ein
-		\acp{Abk.}  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
-	siehe auch: http://golatex.de/wiki/%5Cacronym
+Nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
+Verwendung:  
+* `\ac{Abk.}`   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
+* `\acs{Abk.}`   -->  fügt die Abkürzung ein
+* `\acf{Abk.}`   --> fügt die Abkürzung UND die Erklärung ein
+* `\acl{Abk.}`   --> fügt nur die Erklärung ein
+* `\acp{Abk.}`  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
+
+Siehe auch: http://golatex.de/wiki/%5Cacronym
 	
-example: 
+Example: 
+```LaTeX
 \acro{AGPL}{Affero GNU General Public License}
 \acro{WSN}{Wireless Sensor Network}
-
+```
 
 
 ## Appendix
 
 (Beispielhafter Anhang)
  
-
+```LaTeX
 {\Large
 \begin{enumerate}[label=\Alph*.]
 	\item Assignment 
@@ -144,6 +146,7 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 	\> \>  $\vdash$  \textbf{images/}   \> $\Rightarrow$ \textit{All used images}\\
 	\> \>  $\vdash$  \textbf{lang/}  \> $\Rightarrow$ \textit{Language files for \LaTeX~template}\\ %\llcorner
 \end{tabbing}
+```
 
 # Contributors
 
