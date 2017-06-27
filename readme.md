@@ -12,11 +12,11 @@ Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW H
 Das Template ist im Wesentlichen in 6 Teile unterteil:
 
 * main.tex
-* ads
-* lang
-* settings
-* content
-* images
+* ads/
+* lang/
+* settings/
+* content/
+* images/
 
 ### Main.tex
 
@@ -78,7 +78,7 @@ An abstract is a brief summary of a research article, thesis, review, conference
 
 The terms précis or synopsis are used in some publications to refer to the same thing that other publications might call an ``abstract''. In ``management'' reports, an executive summary usually contains more information (and often more sensitive information) than the abstract does.
 
-Quelle: \url{http://en.wikipedia.org/wiki/Abstract_(summary)}
+Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 
 
 ## Acronyms
@@ -147,17 +147,10 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 
 # Contributors
 
-Autor: Tobias Dreher, Yves Fischer
- Date: 06.07.2011
-
- Autor: Michael Gruben
- Date: 15.05.2013
-
- Autor: Markus Barthel
- Date: 22.08.2014
-
- Autor: Prof. Dr. Rolf Assfalg
- Date 23.03.2017
-
- Autor: Stefan Schneider
- Date: 06.06.2017
+* Tobias Dreher
+* Yves Fischer
+* Michael Gruben
+* Markus Barthel
+* Prof. Dr. Rolf Assfalg
+* Stefan Schneider
+* Andreas Kießling
