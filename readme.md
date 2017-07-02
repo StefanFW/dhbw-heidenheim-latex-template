@@ -4,6 +4,7 @@ Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW H
 
 **Inhalt:**
 * [Templatestrucktur](#templatestruktur)
+* [Document Types](#document\ types)
 * [Komponenten einer Wissenschaftlichen Arbeit](#komponenten einer wissenschaftlichen arbeit)
 * [Contributors](#contributors)
 
@@ -50,6 +51,7 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | -------- | ------------ | -------------- |
 | documentLanguage| Sprache der Arbeit | de<br/> en |
 | documentType | Art der Arbeit | T2\\_1000 Projektarbeit (Semester 1 & 2) <br/> T2\\_2000 Projektarbeit (Semester 3 & 4) <br/> T2\\_3100 Studienarbeit (Semester 5) <br/> T2\\_3300 Bachelorarbeit |
+| multipleAuthors | Wurde die Arbeit von mehreren Autoren verfasst? | true<br/> false |
 | documentAuthor | Autor der Arbeit | |
 | documentTitle | Titel der Arbeit | |
 | documentPeriod | Dauer der Arbeit | |
@@ -69,6 +71,23 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 
 ### images
 
+
+# Document Types
+
+Das Templatet bietet die forlgenden verschiedenen Document Types an:
+
+* T2_1000 Project Thesis (Semester 1 & 2)
+* T2_2000 Project Thesis (Semester 3 & 4)
+* T2_3100 Seminar Paper (Semester 5 & 6)
+* T2_3300 Bachelor Thesis
+
+Das Templatet passt alle relevanten Einstellungen automatisch an, sobald der Document Type geändert wird.
+
+## Document Type spezifische Besonderheiten
+
+### T2_3100
+
+Die Studienarbeit ist eine reine Hochschularbeit. Aus diesem Grund wird der Ort der Firma und der Sperrvermerk entfernt. Desweiteren ist es möglich die Studienarbeit als Gruppe abzugeben. Hierfür gibt es die Variable multipleAuthors. Ist diese auf true gesetzt, passt sich die Eigenständigkeitserklärungs selbst von der Ich- zur Wir-Form an. Mehrere Autoren sind lediglich mit Komma getrent in die Variable documentAuthor einzutragen.
 
 # Komponenten einer Wissenschaftlichen Arbeit
 
