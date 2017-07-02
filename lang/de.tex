@@ -7,8 +7,17 @@
 \newcommand{\documentPeriodPhrase}{Bearbeitungszeitraum}
 \newcommand{\matriculationNumberPhrase}{Matrikelnummer}
 \newcommand{\coursePhrase}{Kurs}
-\newcommand{\companyPhrase}{Ausbildungsbetrieb}
-\newcommand{\tutorPhrase}{Erstgutachter}
+\newcommand{\companyPhrase}{Ausbildungsbetrieb}%
+
+\newcommand{\tutorPhrase}{%
+	\IfStrEqCase{\documentType}{%
+		{T2\_1000}{Gutachter}%
+      	{T2\_2000}{Gutachter}%
+      	{T2\_3100}{Gutachter}%
+      	{T2\_3300}{Erstgutachter}%
+	}
+}
+
 \newcommand{\evaluatorPhrase}{Zweitgutachter}
 \newcommand{\restrictionNoticesPhrase}{Sperrvermerk}
 \newcommand{\declarationPhrase}{Erklärung}
