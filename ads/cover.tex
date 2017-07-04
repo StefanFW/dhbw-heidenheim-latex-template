@@ -3,7 +3,11 @@
 \begin{titlepage}
 	\begin{longtable}{p{8cm} p{8cm}}
 		\raggedright {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-dhbw.png}}} &
-		\raggedleft {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-company.png}}}
+		\ifDocType{T2\_3100}{%
+			% no company logo for semester paper
+		}{%
+			\raggedleft {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-company.png}}}
+		}%
 	\end{longtable}
 	\enlargethispage{20mm}
 	\begin{center}

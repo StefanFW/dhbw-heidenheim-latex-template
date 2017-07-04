@@ -31,8 +31,8 @@
 }
 
 % ifDocType comand definition
-\newcommand{\ifDocType}[2]{%
-  \IfStrEq{\documentType}{#1}{#2}{}
+\newcommand{\ifDocType}[3]{%
+  \IfStrEq{\documentType}{#1}{#2}{#3}
 }
 
 % Include main settings
