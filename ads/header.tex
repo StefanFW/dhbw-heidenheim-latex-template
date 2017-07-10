@@ -27,12 +27,17 @@
 
 % iflang command definition
 \newcommand{\iflang}[2]{%
-  \IfStrEq{\documentLanguage}{#1}{#2}{}
+  \IfStrEq{\documentLanguage}{#1}{#2}{}%
 }
 
 % ifDocType comand definition
 \newcommand{\ifDocType}[3]{%
-  \IfStrEq{\documentType}{#1}{#2}{#3}
+  \IfStrEq{\documentType}{#1}{#2}{#3}%
+}
+
+% ifMultipleAuthors definition
+\newcommand{\ifMultipleAuthors}[2]{%
+  \IfStrEq{\multipleAuthors}{true}{#1}{#2}%
 }
 
 % Include main settings

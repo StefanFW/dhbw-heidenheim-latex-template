@@ -14,8 +14,13 @@
     \doublespacing{
 		\vspace*{12mm}	{\LARGE\textbf \documentTitle }}\\
 		\vspace*{12mm}	{\large\textbf {\documentTypePhrase}}\\
-		\vspace*{12mm}	\degreePhrase\\
-		\vspace*{3mm}		{\textbf \degree}\\
+		
+		% degre only for bachelor thesis
+		\ifDocType{T2\_3300}{
+			\vspace*{12mm}	\degreePhrase\\
+			\vspace*{3mm}		{\textbf \degree}\\
+		}
+
 		\vspace*{12mm}	\departmentPhrase{} \department\\
     \vspace*{0mm}		\locationUniversityPhrase{} \locationUniversity\\
 		\vspace*{12mm}	\documentAuthorPhrase\\
@@ -28,9 +33,18 @@
 		mmmmmmmmmmmmmmmmmmmmmmmmmm             \= \kill
 		\textbf{\documentPeriodPhrase}       \>  \documentPeriod\\
 		\textbf{\matriculationNumberPhrase, \coursePhrase}  \>  \matriculationNumber, \course\\
-		\textbf{\companyPhrase}                  \>  \companyName, \companyLocation\\
+
+		\ifDocType{T2\_3100}{%
+			% no company for the semester paper
+		}{%
+			\textbf{\companyPhrase}                  \>  \companyName, \companyLocation\\
+		}%
 		\textbf{\tutorPhrase}               \>  \tutor\\
-		\textbf{\evaluatorPhrase}              \>  \evaluator
+
+		% evaluator only for bachelor thesis
+		\ifDocType{T2\_3300}{
+			\textbf{\evaluatorPhrase}              \>  \evaluator
+		}{}
 	\end{tabbing}
 	\end{spacing}
 \end{titlepage}
