@@ -3,14 +3,14 @@
 Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW Heidenheim geeignet.
 
 **Inhalt:**
-* [Templatestrucktur](#templatestruktur)
+* [Templatestruktur](#templatestruktur)
 * [Document Types](#document\ types)
 * [Komponenten einer Wissenschaftlichen Arbeit](#komponenten einer wissenschaftlichen arbeit)
 * [Contributors](#contributors)
 
 ## Templatestruktur
 
-Das Template ist im Wesentlichen in 6 Teile unterteil:
+Das Template ist im Wesentlichen in 6 Teile unterteilt:
 
 * main.tex
 * ads/
@@ -21,7 +21,7 @@ Das Template ist im Wesentlichen in 6 Teile unterteil:
 
 ### Main.tex
 
-main.tex ist die Kerndatei des Templates und damit auch die Datei, welche kompiliert werden muss. Durch Importe anderer Datein wird die Dokumentenstrucktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
+main.tex ist die Kerndatei des Templates und damit auch die Datei, die kompiliert werden muss. Durch Importe anderer Dateien wird die Dokumentenstruktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
 
 ### ads
 
@@ -34,16 +34,16 @@ Im Ordner ads befinden sich folgende vordefinierte Vorlagen, welche nicht angepa
 
 ### lang
 
-Im Ordner lang befinden sich alle nötigen Übersetzungen.
+Im Ordner lang befinden sich alle notwendigen Übersetzungen.
 
 ### settings
 
-Im Ordner settings gibt es zwei Datein:
+Der Ordner settings beinhaltet zwei Dateien:
 
 * general.tex
 * document.tex
 
-In der Datei general.tex sind Grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
+In der Datei general.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
 
 In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
 
@@ -74,14 +74,14 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 
 # Document Types
 
-Das Templatet bietet die forlgenden verschiedenen Document Types an:
+Das Template bietet die folgenden verschiedenen Document Types an:
 
 * T2_1000 Project Thesis (Semester 1 & 2)
 * T2_2000 Project Thesis (Semester 3 & 4)
 * T2_3100 Seminar Paper (Semester 5 & 6)
 * T2_3300 Bachelor Thesis
 
-Das Templatet passt alle relevanten Einstellungen automatisch an, sobald der Document Type geändert wird.
+Das Template passt alle relevanten Einstellungen automatisch an, sobald der Document Type geändert wird.
 
 ## Document Type spezifische Besonderheiten
 
@@ -102,7 +102,7 @@ Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 
 ## Acronyms
 
-nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
+Nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt.
 Verwendung: 
 		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
 		\acs{Abk.}   -->  fügt die Abkürzung ein
