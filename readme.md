@@ -4,8 +4,8 @@ Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW H
 
 **Inhalt:**
 * [Templatestruktur](#templatestruktur)
-* [Document Types](#document\ types)
-* [Komponenten einer Wissenschaftlichen Arbeit](#komponenten einer wissenschaftlichen arbeit)
+* [Document Types](#document-types)
+* [Komponenten einer Wissenschaftlichen Arbeit](#komponenten-einer-wissenschaftlichen-arbeit)
 * [Contributors](#contributors)
 
 ## Templatestruktur
