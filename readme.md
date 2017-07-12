@@ -173,3 +173,4 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 * Prof. Dr. Rolf Assfalg
 * Stefan Schneider
 * Andreas Kießling
+* Sarah Willibald
