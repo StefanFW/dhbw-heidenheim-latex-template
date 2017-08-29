@@ -8,7 +8,16 @@
 \newcommand{\matriculationNumberPhrase}{Student ID}
 \newcommand{\coursePhrase}{Course}
 \newcommand{\companyPhrase}{Company}
-\newcommand{\tutorPhrase}{First Reviewer}
+
+\newcommand{\tutorPhrase}{%
+	\IfStrEqCase{\documentType}{%
+		{T2\_1000}{Reviewer}%
+      	{T2\_2000}{Reviewer}%
+      	{T2\_3100}{Reviewer}%
+      	{T2\_3300}{First Reviewer}%
+	}
+}
+
 \newcommand{\evaluatorPhrase}{Second Reviewer}
 \newcommand{\restrictionNoticesPhrase}{Confidentiality Statement} %Restriction Notice}
 \newcommand{\declarationPhrase}{Author's declaration}
@@ -21,7 +30,7 @@
 \newcommand{\authorListingPhrase}{Listing}
 \newcommand{\acronymsPhrase}{Acronyms}
 
-\newcommand{\documentTypePhrase}{
+\newcommand{\documentTypePhrase}{%
   \IfStrEqCase{\documentType}{%
       {T2\_1000}{Project Thesis}%
       {T2\_2000}{Project Thesis}%

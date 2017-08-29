@@ -3,13 +3,14 @@
 Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW Heidenheim geeignet.
 
 **Inhalt:**
-* [Templatestrucktur](#templatestruktur)
-* [Komponenten einer Wissenschaftlichen Arbeit](#komponenten einer wissenschaftlichen arbeit)
+* [Templatestruktur](#templatestruktur)
+* [Document Types](#document-types)
+* [Komponenten einer Wissenschaftlichen Arbeit](#komponenten-einer-wissenschaftlichen-arbeit)
 * [Contributors](#contributors)
 
 ## Templatestruktur
 
-Das Template ist im Wesentlichen in 6 Teile unterteil:
+Das Template ist im Wesentlichen in 6 Teile unterteilt:
 
 * main.tex
 * ads/
@@ -20,7 +21,7 @@ Das Template ist im Wesentlichen in 6 Teile unterteil:
 
 ### Main.tex
 
-main.tex ist die Kerndatei des Templates und damit auch die Datei, welche kompiliert werden muss. Durch Importe anderer Datein wird die Dokumentenstrucktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
+main.tex ist die Kerndatei des Templates und damit auch die Datei, die kompiliert werden muss. Durch Importe anderer Dateien wird die Dokumentenstruktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
 
 ### ads
 
@@ -33,16 +34,16 @@ Im Ordner ads befinden sich folgende vordefinierte Vorlagen, welche nicht angepa
 
 ### lang
 
-Im Ordner lang befinden sich alle nötigen Übersetzungen.
+Im Ordner lang befinden sich alle notwendigen Übersetzungen.
 
 ### settings
 
-Im Ordner settings gibt es zwei Datein:
+Der Ordner settings beinhaltet zwei Dateien:
 
 * general.tex
 * document.tex
 
-In der Datei general.tex sind Grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
+In der Datei general.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
 
 In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
 
@@ -50,6 +51,7 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | -------- | ------------ | -------------- |
 | documentLanguage| Sprache der Arbeit | de<br/> en |
 | documentType | Art der Arbeit | T2\\_1000 Projektarbeit (Semester 1 & 2) <br/> T2\\_2000 Projektarbeit (Semester 3 & 4) <br/> T2\\_3100 Studienarbeit (Semester 5) <br/> T2\\_3300 Bachelorarbeit |
+| multipleAuthors | Wurde die Arbeit von mehreren Autoren verfasst? | true<br/> false |
 | documentAuthor | Autor der Arbeit | |
 | documentTitle | Titel der Arbeit | |
 | documentPeriod | Dauer der Arbeit | |
@@ -70,6 +72,23 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 ### images
 
 
+# Document Types
+
+Das Template bietet die folgenden verschiedenen Document Types an:
+
+* T2_1000 Project Thesis (Semester 1 & 2)
+* T2_2000 Project Thesis (Semester 3 & 4)
+* T2_3100 Seminar Paper (Semester 5 & 6)
+* T2_3300 Bachelor Thesis
+
+Das Template passt alle relevanten Einstellungen automatisch an, sobald der Document Type geändert wird.
+
+## Document Type spezifische Besonderheiten
+
+### T2_3100
+
+Die Studienarbeit ist eine reine Hochschularbeit. Aus diesem Grund wird der Ort der Firma und der Sperrvermerk entfernt. Desweiteren ist es möglich die Studienarbeit als Gruppe abzugeben. Hierfür gibt es die Variable multipleAuthors. Ist diese auf true gesetzt, passt sich die Eigenständigkeitserklärungs selbst von der Ich- zur Wir-Form an. Mehrere Autoren sind lediglich mit Komma getrent in die Variable documentAuthor einzutragen.
+
 # Komponenten einer Wissenschaftlichen Arbeit
 
 ## Abstract
@@ -83,7 +102,7 @@ Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 
 ## Acronyms
 
-nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
+Nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt.
 Verwendung: 
 		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
 		\acs{Abk.}   -->  fügt die Abkürzung ein
@@ -154,3 +173,4 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 * Prof. Dr. Rolf Assfalg
 * Stefan Schneider
 * Andreas Kießling
+* Sarah Willibald
