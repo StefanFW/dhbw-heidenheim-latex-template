@@ -19,7 +19,7 @@ Das Template ist im Wesentlichen in 6 Teile unterteilt:
 * content/
 * images/
 
-### Main.tex
+### main.tex
 
 main.tex ist die Kerndatei des Templates und damit auch die Datei, die kompiliert werden muss. Durch Importe anderer Dateien wird die Dokumentenstruktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
 
@@ -47,25 +47,25 @@ In der Datei general.tex sind grundlegende Einstellungen vordefiniert, welche ni
 
 In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
 
-| Variable | Beschreibung | Mögliche Werte |
-| -------- | ------------ | -------------- |
-| documentLanguage| Sprache der Arbeit | de<br/> en |
-| documentType | Art der Arbeit | T2\\_1000 Projektarbeit (Semester 1 & 2) <br/> T2\\_2000 Projektarbeit (Semester 3 & 4) <br/> T2\\_3100 Studienarbeit (Semester 5) <br/> T2\\_3300 Bachelorarbeit |
-| multipleAuthors | Wurde die Arbeit von mehreren Autoren verfasst? | true<br/> false |
-| documentAuthor | Autor der Arbeit | |
-| documentTitle | Titel der Arbeit | |
-| documentPeriod | Dauer der Arbeit | |
-| matriculationNumber | Matrikelnummer des Autors | |
-| locationUniversity | Standort der DHBW | Heidenheim |
-| department | Fakultät der DHBW in der sich der Autor befindet | |
-| course | Kurs in dem sich der Autor befindet | |
-| degree | Abschluss, welcher mit dieser Arbeit angestrebt wird | Bachelor of Science (INF2014-MI - INF2016-MI) <br/> Bachelor of Engineering (INF2014-IA/IM - INF2016-IA/IM) <br/> Bachelor of Science  (INF2017-IM/MI/IA) |
-|releaseDate | Abgabedatum | |
-| releaseLocation | Abgabeort | Heidenheim |
-| companyName | Name des Unternehmens in dem der Autor angestellt ist | |
-| companyLocation | Firmensitz | |
-| tutor | Betrieblicher Betreuer der Arbeit | |
-| evaluator | Zweitkorrektor der Arbeit | |
+| Variable            | Beschreibung                                          | Mögliche Werte  |
+| ------------------- | ----------------------------------------------------- | --------------- |
+| documentLanguage    | Sprache der Arbeit                                    | de<br/> en      |
+| documentType        | Art der Arbeit                                        | T2\\_1000 Projektarbeit (Semester 1 & 2) <br/> T2\\_2000 Projektarbeit (Semester 3 & 4) <br/> T2\\_3100 Studienarbeit (Semester 5) <br/> T2\\_3300 Bachelorarbeit |
+| multipleAuthors     | Wurde die Arbeit von mehreren Autoren verfasst?       | true<br/> false |
+| documentAuthor      | Autor der Arbeit                                      |                 |
+| documentTitle       | Titel der Arbeit                                      |                 |
+| documentPeriod      | Dauer der Arbeit                                      |                 |
+| matriculationNumber | Matrikelnummer des Autors                             |                 |
+| locationUniversity  | Standort der DHBW                                     | Heidenheim      |
+| department          | Fakultät der DHBW in der sich der Autor befindet      |                 |
+| course              | Kurs in dem sich der Autor befindet                   |                 |
+| degree              | Abschluss, welcher mit dieser Arbeit angestrebt wird  | Bachelor of Science (INF2014-MI - INF2016-MI) <br/> Bachelor of Engineering (INF2014-IA/IM - INF2016-IA/IM) <br/> Bachelor of Science  (INF2017-IM/MI/IA) |
+| releaseDate         | Abgabedatum                                           |                 |
+| releaseLocation     | Abgabeort                                             | Heidenheim      |
+| companyName         | Name des Unternehmens in dem der Autor angestellt ist |                 |
+| companyLocation     | Firmensitz                                            |                 |
+| tutor               | Betrieblicher Betreuer der Arbeit                     |                 |
+| evaluator           | Zweitkorrektor der Arbeit                             |                 |
 
 ### content
 
@@ -103,25 +103,28 @@ Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 ## Acronyms
 
 Nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt.
-Verwendung: 
-		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
-		\acs{Abk.}   -->  fügt die Abkürzung ein
-		\acf{Abk.}   --> fügt die Abkürzung UND die Erklärung ein
-		\acl{Abk.}   --> fügt nur die Erklärung ein
-		\acp{Abk.}  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
-	siehe auch: http://golatex.de/wiki/%5Cacronym
+
+Verwendung:  
+* `\ac{Abk.}`   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
+* `\acs{Abk.}`   -->  fügt die Abkürzung ein
+* `\acf{Abk.}`   --> fügt die Abkürzung UND die Erklärung ein
+* `\acl{Abk.}`   --> fügt nur die Erklärung ein
+* `\acp{Abk.}`  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
+
+Siehe auch: [http://golatex.de/wiki/\acronym](http://golatex.de/wiki/%5Cacronym)
 	
-example: 
+Beispiel: 
+```LaTeX
 \acro{AGPL}{Affero GNU General Public License}
 \acro{WSN}{Wireless Sensor Network}
-
+```
 
 
 ## Appendix
 
 (Beispielhafter Anhang)
  
-
+```LaTeX
 {\Large
 \begin{enumerate}[label=\Alph*.]
 	\item Assignment 
@@ -163,6 +166,7 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 	\> \>  $\vdash$  \textbf{images/}   \> $\Rightarrow$ \textit{All used images}\\
 	\> \>  $\vdash$  \textbf{lang/}  \> $\Rightarrow$ \textit{Language files for \LaTeX~template}\\ %\llcorner
 \end{tabbing}
+```
 
 # Contributors
 
