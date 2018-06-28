@@ -66,7 +66,7 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | companyLocation     | Firmensitz                                            |                 |
 | tutor               | Betrieblicher Betreuer der Arbeit                     |                 |
 | evaluator           | Zweitkorrektor der Arbeit                             |                 |
-| linkColor           | Farbe von Verlinkungen                                | 00007A (schwarz)|
+| linkColor           | Farbe von Verlinkungen                                | 000000 (schwarz)|
 
 ### content
 
