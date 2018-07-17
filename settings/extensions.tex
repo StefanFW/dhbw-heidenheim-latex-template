@@ -1,27 +1,31 @@
 %!TEX root = ../main.tex
 
 % Define syntax highlighting for yaml files
-\newcommand\YAMLcolonstyle{\color{red}\mdseries}
-\newcommand\YAMLkeystyle{\color{black}\bfseries}
-\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+\newcommand\colonstyle{\color{red}\mdseries}
+\newcommand\keystyle{\color{black}\bfseries}
+\newcommand\valuestyle{\color{blue}\mdseries}
 
+% The following block defines new languages
 \makeatletter
 
-% here is a macro expanding to the name of the language
-% (handy if you decide to change it further down the road)
-\newcommand\language@yaml{yaml}
+% for yaml files.
+\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}
 
+% Define highlighting for yaml
+\newcommand\language@yaml{yaml}
 \expandafter\expandafter\expandafter\lstdefinelanguage
 \expandafter{\language@yaml}
 {
     keywords={true,false,null,y,n},
-    keywordstyle=\color{darkgray}\bfseries,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
     sensitive=false,
     comment=[l]{\#},
     morecomment=[s]{/*}{*/},
     moredelim=[l][\color{orange}]{\&},
     moredelim=[l][\color{magenta}]{*},
-    moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},   % switch to value style at :
+    moredelim=**[il][\colonstyle{:}\valuestyle]{:},   % switch to value style at :
     morestring=[b]',
     morestring=[b]",
     literate =    {---}{{\ProcessThreeDashes}}3
@@ -29,9 +33,23 @@
                 {|}{{\textcolor{red}\textbar}}1 
                 {\ -\ }{{\mdseries\ -\ }}3,
 }
+\lst@AddToHook{EveryLine}{\ifx\lst@language\language@yaml\keystyle\fi}
+
+% Define highlighting for dockerfiles
+\newcommand\language@docker{docker}
+\expandafter\expandafter\expandafter\lstdefinelanguage
+\expandafter{\language@docker}
+{
+    keywords={FROM, RUN, CMD, LABEL, MAINTAINER, EXPOSE, ENV, ADD, COPY, ENTRYPOINT, VOLUME, USER, WORKDIR, ARG, ONBUILD, STOPSIGNAL, HEALTHCHECK, SHELL, User},
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    stringstyle=\color{stringcolor},
+    sensitive=true,
+    comment=[l]{\#},
+    morestring=[b]',
+    morestring=[b]"
+}
 
 % switch to key style at EOL
-\lst@AddToHook{EveryLine}{\ifx\lst@language\language@yaml\YAMLkeystyle\fi}
+\lst@AddToHook{EveryLine}{\ifx\lst@language\language@docker\keystyle\fi}
 \makeatother
-
-\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}

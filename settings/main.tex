@@ -26,7 +26,12 @@
 \newcommand{\defineColors}{%
 	\definecolor{LinkColor}{HTML}{\linkColor}
 	\definecolor{ListingBackground}{HTML}{F8F8F8}
+	\definecolor{keywordcolor}{rgb}{0.133,0.133,0.6}
+	\definecolor{commentcolor}{rgb}{0.133,0.545,0.133}
+	\definecolor{stringcolor}{rgb}{0.627,0.126,0.941}
 }
+
+
 
 %% Syntax Highlighting (Listings)
 \newcommand{\listingsettings}{%
@@ -41,6 +46,7 @@
 		postbreak=\space,		% break line after space
 		tabsize=2,				% tabulator size
 		basicstyle=\ttfamily\footnotesize, % font style
+		showstringspaces=false,	% Show spaces in strings
 		showspaces=false,		% show space (true, false)		showstringspaces=false,	% show space in strings (true, false)
 		extendedchars=true,		% show all Latin1 characters (true, false)
 		captionpos=b,			% sets the caption-position to bottom
@@ -52,8 +58,8 @@
 		rulecolor=\color{darkgray},	% border color
 		fillcolor=\color{ListingBackground},
 		aboveskip=20pt,
-		keywordstyle=\color[rgb]{0.133,0.133,0.6},
-		commentstyle=\color[rgb]{0.133,0.545,0.133},
-		stringstyle=\color[rgb]{0.627,0.126,0.941}
+		keywordstyle=\color{keywordcolor},
+		commentstyle=\color{commentcolor},
+		stringstyle=\color{stringcolor}
 	}
 }
