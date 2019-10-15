@@ -1,6 +1,7 @@
 %!TEX root = ../main.tex
 
 \newcommand{\degreePhrase}{for the}
+\newcommand{\lecturePhrase}{for the lecture}
 \newcommand{\departmentPhrase}{from the Course of Studies}
 \newcommand{\locationUniversityPhrase}{at the Cooperative State University Baden-Württemberg}
 \newcommand{\documentAuthorPhrase}{by}
@@ -15,7 +16,7 @@
       	{T2\_2000}{Reviewer}%
       	{T2\_3100}{Reviewer}%
       	{T2\_3300}{First Reviewer}%
-	}
+	}[Reviewer]
 }
 
 \newcommand{\evaluatorPhrase}{Second Reviewer}
@@ -36,5 +37,5 @@
       {T2\_2000}{Project Thesis}%
       {T2\_3100}{Semester Paper}%
       {T2\_3300}{Bachelor Thesis}%
-  }
+  }[{\documentType\ignorespaces}]
 }

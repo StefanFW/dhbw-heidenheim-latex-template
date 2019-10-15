@@ -1,6 +1,7 @@
 %!TEX root = ../main.tex
 
 \newcommand{\degreePhrase}{für die Prüfung zum}
+\newcommand{\lecturePhrase}{für die Vorlesung}
 \newcommand{\departmentPhrase}{des Studiengangs}
 \newcommand{\locationUniversityPhrase}{an der Dualen Hochschule Baden-Württemberg}
 \newcommand{\documentAuthorPhrase}{von}
@@ -15,7 +16,7 @@
       	{T2\_2000}{Gutachter}%
       	{T2\_3100}{Gutachter}%
       	{T2\_3300}{Erstgutachter}%
-	}
+	}[Gutachter]
 }
 
 \newcommand{\evaluatorPhrase}{Zweitgutachter}
@@ -34,5 +35,5 @@
       {T2\_2000}{Projektarbeit}%
       {T2\_3100}{Studienarbeit}%
       {T2\_3300}{Bachelorarbeit}%
-  }
+  }[{\documentType\ignorespaces}]
 }
