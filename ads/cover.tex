@@ -3,15 +3,16 @@
 \begin{titlepage}
 	\begin{longtable}{p{8cm} p{8cm}}
 		\raggedright {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-dhbw.pdf}}} &
-		\ifDocType{T2\_3100}{%
-			% no company logo for semester paper
-		}{%
-			\raggedleft {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-company.png}}}
+		% no company logo for semester paper and special documents
+		\ifDocType{T2\_3100}{}{%
+			\ifSpecialDocument{}{%
+				\raggedleft {\raisebox{\ht\strutbox-\totalheight}{\includegraphics[height=2.5cm]{images/cover/logo-company.png}}}
+			}%
 		}%
 	\end{longtable}
 	\enlargethispage{20mm}
 	\begin{center}
-    \doublespacing{
+		\doublespacing{
 		\vspace*{12mm}	{\LARGE\textbf \documentTitle }}\\
 		\vspace*{12mm}	{\large\textbf {\documentTypePhrase}}\\
 		
@@ -19,6 +20,11 @@
 		\ifDocType{T2\_3300}{
 			\vspace*{12mm}	\degreePhrase\\
 			\vspace*{3mm}		{\textbf \degree}\\
+		}
+
+		\IfStrEq{\showLecture}{true}{
+			\vspace*{12mm}	\lecturePhrase\\
+			\vspace*{0mm}		{\textbf \lecture}\\
 		}
 
 		\vspace*{12mm}	\departmentPhrase{} \department\\
@@ -34,10 +40,11 @@
 		\textbf{\documentPeriodPhrase}       \>  \documentPeriod\\
 		\textbf{\matriculationNumberPhrase, \coursePhrase}  \>  \matriculationNumber, \course\\
 
-		\ifDocType{T2\_3100}{%
-			% no company for the semester paper
-		}{%
-			\textbf{\companyPhrase}                  \>  \companyName, \companyLocation\\
+		% no company for the semester paper and special documents
+		\ifDocType{T2\_3100}{}{%
+			\ifSpecialDocument{}{%
+				\textbf{\companyPhrase}                  \>  \companyName, \companyLocation\\
+			}%
 		}%
 		\textbf{\tutorPhrase}               \>  \tutor\\
 
