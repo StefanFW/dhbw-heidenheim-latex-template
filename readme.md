@@ -40,10 +40,10 @@ Im Ordner lang befinden sich alle notwendigen Übersetzungen.
 
 Der Ordner settings beinhaltet zwei Dateien:
 
-* general.tex
+* main.tex
 * document.tex
 
-In der Datei general.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
+In der Datei main.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
 
 In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
 
