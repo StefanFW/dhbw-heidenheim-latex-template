@@ -175,6 +175,11 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 \end{tabbing}
 ```
 
+# Mögliche Fehler
+
+## Literaturverzeichnis
+Sollte unter Texstudio das Literaturverzeichnis nicht angezeigt werden und beim erstellen eine Fehlermeldung im Log erscheinen, so ist zu überprüfen, ob Texstudio richtig eingerichtet ist. Siehe dazu http://texwelt.de/wissen/fragen/1909/wie-verwende-ich-biber-in-meinem-editor
+
 # Contributors
 
 * Tobias Dreher
