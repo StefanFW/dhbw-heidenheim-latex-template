@@ -1,6 +1,11 @@
 # DHBW Latex Ravensburg Template
 
 Dieses LaTeX Template ist für alle Arbeiten DHBW geeignet.
+Die Korrekheit des Templates ist nicht durch die Autoren garantiert.
+Siehe dazu [License](./LICENSE)
+
+Wie ein Workflow mit Git als Versionierungstool umgesetzt werden kann siehe
+[hier](https://stackoverflow.com/a/6190412)
 
 **Inhalt:**
 * [Templatestruktur](#templatestruktur)
@@ -10,7 +15,7 @@ Dieses LaTeX Template ist für alle Arbeiten DHBW geeignet.
 
 ## Templatestruktur
 
-Das Template ist im Wesentlichen in 6 Teile unterteilt:
+Das Template ist in 6 Teile unterteilt:
 
 * main.tex
 * ads/
@@ -31,6 +36,28 @@ Im Ordner ads befinden sich folgende vordefinierte Vorlagen, welche nicht angepa
 * Eigenständigkeitserklärung
 * Sperrvermerk
 * LaTeX Document Header
+
+### content
+
+Der content Ordner umfasst folgende Dateien:
+
+* Abstract
+* Acronyme
+* Glossar
+* Anhang
+* chapter/
+
+Der Chapter Ordner beinhaltet alle Kapitel des inhaltichen Teils der Arbeit.
+Die in diesem Ordner abgelegten Dateien werden automatisch erkannt.
+Für eine korrekte Implementierung sollte folgendes Muster weitergeführt werden:
+* Für jedes Kapitel eine eigene Datei
+* Dateien mit der Bezeichnung durchnummieren
+
+```Die Nummerierung der Dateien beschreibt nur die Reihenfolge der Kapitel, nicht die Nummerierung der Kapitel im Text```
+
+### images
+
+Alle Grafiken/Bilder die im Text verwendet werden verweisen auf diesen Ordner.
 
 ### lang
 
@@ -71,10 +98,6 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | tutor               | Betreuer*in des Dualen Partners	                      |                 |
 | evaluator           | Gutachter*in der Dualen Hochschule                    |                 |
 | linkColor           | Farbe von Verlinkungen                                | 000000 (schwarz)|
-
-### content
-
-### images
 
 
 # Document Types
@@ -178,8 +201,9 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 \end{tabbing}
 ```
 
-# Contributors (DHBW Hdh Tempalte)
+# Contributors 
 
+(DHBW Hdh Tempalte)
 * Tobias Dreher
 * Yves Fischer
 * Michael Gruben
@@ -188,3 +212,6 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 * Stefan Schneider
 * Andreas Kießling
 * Sarah Willibald
+
+(DHBW Rv Template)
+* Thibault Rey
