@@ -1,6 +1,6 @@
-# DHBW Heidenheim LaTeX Template
+# DHBW Latex falch Template
 
-Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW Heidenheim geeignet.
+Dieses LaTeX Template ist für alle Arbeiten DHBW geeignet.
 
 **Inhalt:**
 * [Templatestruktur](#templatestruktur)
@@ -52,9 +52,11 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | documentLanguage    | Sprache der Arbeit                                    | de<br/> en      |
 | documentType        | Art der Arbeit                                        | T2\\_1000 Projektarbeit (Semester 1 & 2) <br/> T2\\_2000 Projektarbeit (Semester 3 & 4) <br/> T2\\_3100 Studienarbeit (Semester 5) <br/> T2\\_3300 Bachelorarbeit <br/> Für andere Arbeiten den Typ direkt eintragen|
 | multipleAuthors     | Wurde die Arbeit von mehreren Autoren verfasst?       | true<br/> false |
-| documentAuthor      | Autor der Arbeit                                      |                 |
+| showRestriction     | Sperrvermerk?										  | true<br/> false |
+| showAbstract        | Abstract?											  | true<br/> false |
 | documentTitle       | Titel der Arbeit                                      |                 |
 | documentPeriod      | Dauer der Arbeit                                      |                 |
+| documentAuthor      | Autor der Arbeit                                      | Vorname Nachname|
 | matriculationNumber | Matrikelnummer des Autors                             |                 |
 | locationUniversity  | Standort der DHBW                                     | Heidenheim      |
 | department          | Fakultät der DHBW in der sich der Autor befindet      |                 |
@@ -63,11 +65,11 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | lecture             | Vorlesung, für die die Arbeit geschrieben wurde       |                 |
 | showLecture         | Ob die Vorlesung auf dem Deckblatt gezeigt werden soll| true <br/> false|
 | releaseDate         | Abgabedatum                                           |                 |
-| releaseLocation     | Abgabeort                                             | Heidenheim      |
+| releaseLocation     | Abgabeort                                             | Heidenheim<br/> Ravensburg|
 | companyName         | Name des Unternehmens in dem der Autor angestellt ist |                 |
 | companyLocation     | Firmensitz                                            |                 |
-| tutor               | Betrieblicher Betreuer der Arbeit                     |                 |
-| evaluator           | Zweitkorrektor der Arbeit                             |                 |
+| tutor               | Betreuer*in des Dualen Partners	                      |                 |
+| evaluator           | Gutachter*in der Dualen Hochschule                    |                 |
 | linkColor           | Farbe von Verlinkungen                                | 000000 (schwarz)|
 
 ### content
@@ -100,9 +102,9 @@ Für andere als die vordefinierten Types kann der Dokumenttyp direkt in das Feld
 
 ## Abstract
 
-An abstract is a brief summary of a research article, thesis, review, conference proceeding or any in-depth analysis of a particular subject or discipline, and is often used to help the reader quickly ascertain the paper's purpose. When used, an abstract always appears at the beginning of a manuscript, acting as the point-of-entry for any given scientific paper or patent application. Abstracting and indexing services for various academic disciplines are aimed at compiling a body of literature for that particular subject.
-
-The terms précis or synopsis are used in some publications to refer to the same thing that other publications might call an ``abstract''. In ``management'' reports, an executive summary usually contains more information (and often more sensitive information) than the abstract does.
+>An abstract is a brief summary of a research article, thesis, review, conference proceeding or any in-depth analysis of a particular subject or discipline, and is often used to help the reader quickly ascertain the paper's purpose. When used, an abstract always appears at the beginning of a manuscript, acting as the point-of-entry for any given scientific paper or patent application. Abstracting and indexing services for various academic disciplines are aimed at compiling a body of literature for that particular subject.
+>
+>The terms précis or synopsis are used in some publications to refer to the same thing that other publications might call an "abstract". In "management" reports, an executive summary usually contains more information (and often more sensitive information) than the abstract does.
 
 Quelle: http://en.wikipedia.org/wiki/Abstract_(summary)
 

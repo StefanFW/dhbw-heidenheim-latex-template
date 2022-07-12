@@ -14,95 +14,99 @@
 
 \begin{document}
 
-	% Cover
-	\begin{spacing}{1}
-		\input{ads/cover}
-	\end{spacing}
+% Cover
+\begin{spacing}{1}
+	\input{ads/cover}
+\end{spacing}
+\newpage
+
+\pagenumbering{Roman}
+
+% Restriction notices
+\ifDocType{T2\_3100}{%
+	% no restricition notices for semester paper
+}{%
+	\input{ads/restrictionNotices}
 	\newpage
+}%
 
-	\pagenumbering{Roman}
+% Declaration
+\input{ads/declaration}
+\newpage
 
-	% Restriction notices
-	\ifDocType{T2\_3100}{%
-		% no restricition notices for semester paper
-	}{%
-		\input{ads/restrictionNotices}
-		\newpage
-	}%
+% Abstract
+\input{content/abstract}
+\newpage
 
-	% Declaration
-	\input{ads/declaration}
-	\newpage
+% only page number in footer
+\pagestyle{plain}
 
-	% Abstract
-	\input{content/abstract}
-	\newpage
+% space bevore chapter headline
+\RedeclareSectionCommand[beforeskip=\chapterMargin]{chapter}
 
-        % only page number in footer
-	\pagestyle{plain}
+% Contents
+\begin{spacing}{1}
 	
-	% space bevore chapter headline
-	\RedeclareSectionCommand[beforeskip=\chapterMargin]{chapter}
+	\begingroup
 
-	% Contents
-	\begin{spacing}{1.1}
-		\begingroup
-		
-		    % set subchapter depth
-			\setcounter{tocdepth}{2}
-			
-			\tableofcontents
-			\clearpage
-		\endgroup
-	\end{spacing}
-	\newpage
+	% set subchapter depth
+	\setcounter{tocdepth}{2}
 
-	% Acronyms
-	\cleardoublepage
-    \input{content/acronyms}
+	\tableofcontents
+	\clearpage
+	\endgroup
+\end{spacing}
+\newpage
 
-	% List of Figures
-	\cleardoublepage
-	\listoffigures
+% Acronyms
+\cleardoublepage
+\input{content/acronyms}
 
-	%List of Tables
-	\cleardoublepage
-	\listoftables
+% List of Figures
+\cleardoublepage
+\listoffigures
 
-	% List of Listings
-	\cleardoublepage
-	\lstlistoflistings
-	\cleardoublepage
+%List of Tables
+\cleardoublepage
+\listoftables
 
-	\pagenumbering{arabic}
-	
-	\pagestyle{headings}
+% List of Listings
+\cleardoublepage
+\lstlistoflistings
+\cleardoublepage
 
-	%Content
-	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
+\pagenumbering{arabic}
+
+\pagestyle{headings}
+
+%Content
+\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
 		\edef\FileName{content/chapter/\i .tex}%
-			\IfFileExists{\FileName}{%
-				\input{\FileName}
-			}
-			{%
-%				No chapter available
-			}
+		\IfFileExists{\FileName}{%
+			\input{\FileName}
+		}
+		{%
+			%				No chapter available
+		}
 	}
 
-	\clearpage
+\clearpage
 
-	% Bibilography
-	\cleardoublepage
-	\printbibliography
+% Bibilography
+\cleardoublepage
+\printbibliography
 
-	% Glossar
-	\cleardoublepage
-	\printglossary[style=altlist,title=\glossaryPhrase]
-	\input{content/glossary}
-	
-	% Appendix
-	\clearpage
-	\appendix
-	\input{content/appendix}
-	
+% % Glossar
+% \input{content/glossary}
+\cleardoublepage
+
+% \glsadd{utc}\glsadd{adt}
+% \printglossaries[]
+\printglossary[style=altlist,title=\glossaryPhrase]
+
+% Appendix
+\clearpage
+\appendix
+\input{content/appendix}
+
 \end{document}

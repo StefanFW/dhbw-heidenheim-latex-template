@@ -1,0 +1,27 @@
+{
+    "editor.renderWhitespace": "all",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "*.aux": true,
+        "*.bbl": true,
+        "*.bcf": true,
+        "*.blg":true,
+        "*.fdb_latexmk": true,
+        "*.fls": true,
+        "*.glo":true,
+        "*.glsdefs": true,
+        "*.ist": true,
+        "*.log": true,
+        "*.lol": true,
+        "*.lot": true,
+        "*.run.xml": true,
+        "*.synctex.gz": true,
+        "*.toc": true,
+        "*.lof": true
+    }
+}
