@@ -1,4 +1,4 @@
-# DHBW Latex falch Template
+# DHBW Latex Ravensburg Template
 
 Dieses LaTeX Template ist für alle Arbeiten DHBW geeignet.
 
@@ -126,6 +126,7 @@ Beispiel:
 ```LaTeX
 \acro{AGPL}{Affero GNU General Public License}
 \acro{WSN}{Wireless Sensor Network}
+\acrodefplural{WSN}[WSNs]{Wireless Sensor Networks}
 ```
 
 
@@ -177,7 +178,7 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 \end{tabbing}
 ```
 
-# Contributors
+# Contributors (DHBW Hdh Tempalte)
 
 * Tobias Dreher
 * Yves Fischer
