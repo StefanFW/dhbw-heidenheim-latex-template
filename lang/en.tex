@@ -1,0 +1,42 @@
+%!TEX root = ../main.tex
+
+\newcommand{\degreePhrase}{for the}
+\newcommand{\lecturePhrase}{for the lecture}
+\newcommand{\departmentPhrase}{from the Course of Studies}
+\newcommand{\locationUniversityPhrase}{at the Cooperative State University Baden-Württemberg}
+\newcommand{\documentAuthorPhrase}{by}
+\newcommand{\documentPeriodPhrase}{Time of Project}
+\newcommand{\matriculationNumberPhrase}{Student ID}
+\newcommand{\coursePhrase}{Course}
+\newcommand{\companyPhrase}{Company}
+\newcommand{\companyTutorPhrase}{Company Supervisor}
+
+\newcommand{\tutorPhrase}{%
+	\IfStrEqCase{\documentType}{%
+		{T2\_1000}{Reviewer}%
+      	{T2\_2000}{Reviewer}%
+      	{T2\_3100}{Reviewer}%
+      	{T2\_3300}{First Reviewer}%
+	}[Reviewer]
+}
+
+\newcommand{\evaluatorPhrase}{Second Reviewer}
+\newcommand{\restrictionNoticesPhrase}{Confidentiality Statement} %Restriction Notice}
+\newcommand{\declarationPhrase}{Author's declaration}
+\newcommand{\glossaryPhrase}{Glossary}
+\newcommand{\langabkverz}{Acronyms}
+\newcommand{\langabstract}{Abstract}
+\newcommand{\appendixPhrase}{Appendix}
+\newcommand{\listingPhrase}{Listing}
+\newcommand{\listListingPhrase}{Listings}
+\newcommand{\authorListingPhrase}{Listing}
+\newcommand{\acronymsPhrase}{Acronyms}
+
+\newcommand{\documentTypePhrase}{%
+  \IfStrEqCase{\documentType}{%
+      {T2\_1000}{Project Thesis}%
+      {T2\_2000}{Project Thesis}%
+      {T2\_3100}{Semester Paper}%
+      {T2\_3300}{Bachelor Thesis}%
+  }[{\documentType\ignorespaces}]
+}

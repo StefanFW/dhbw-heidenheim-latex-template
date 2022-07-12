@@ -1,0 +1,58 @@
+%!TEX root = ../main.tex
+
+%% Citation Styles
+% http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf (3.3.1 Citation Styles)
+% recommended:  z.B numeric-comp, alphabetic, 
+% not recommended: authoryear, alphabetic-verb,
+\newcommand{\quoteStyle}{alphabetic-verb}
+
+%% Fonts
+%% palatino, goudysans, lmodern or libertine
+% some more: tgtermes, tgadventor, tgcursor
+\newcommand{\documentFont}{lmodern}
+
+%% Margin
+\newcommand{\margin}{2.5cm}
+
+%% Space between chapter headline and top of page
+\newcommand{\chapterMargin}{20pt}
+
+%% Table settings
+% Column spacing
+\newcommand{\tableColumnMargin}{10pt}
+%Line spacing
+\newcommand{\tableRowMargin}{1.5}
+
+%% Color settings
+\newcommand{\defineColors}{%
+	\definecolor{LinkColor}{HTML}{\linkColor}
+	\definecolor{ListingBackground}{HTML}{FAFAFA}
+}
+
+%% Syntax Highlighting (Listings)
+\newcommand{\listingsettings}{%
+	\lstset{%
+		language=Java,			% default language
+		numbers=left,			% position of line numbers (left, right)
+		stepnumber=1,			% set number to each line
+		numberstyle=\scriptsize,		% letter size of numbers
+		breaklines=true,		        % break lines if necessary (true, false)
+		breakautoindent=true,	        % indenting after break line (true, false)
+		postbreak=\space,		% break line after space
+		tabsize=2,				% tabulator size
+		basicstyle=\ttfamily\footnotesize, % font style
+		showspaces=false,		% show space (true, false)		showstringspaces=false,	% show space in strings (true, false)
+		extendedchars=true,		% show all Latin1 characters (true, false)
+		captionpos=b,			% sets the caption-position to bottom
+		backgroundcolor=\color{ListingBackground}, % source code background
+		xleftmargin=15pt,		        % margin left
+		xrightmargin=10pt,		        % margin right
+		frame=single,			        % border settings
+		rulecolor=\color{lightgray},	% border color
+		fillcolor=\color{ListingBackground},
+		aboveskip=20pt,
+		keywordstyle=\color[RGB]{96,84,151},
+		commentstyle=\color[RGB]{150,150,150},
+		stringstyle=\color[RGB]{73,156,73}
+	}
+}

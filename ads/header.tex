@@ -1,0 +1,192 @@
+%!TEX root = ../main.tex
+
+% show warning for old LaTeX syntax
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[
+	pdftex,
+	oneside,
+	12pt,					% fontsize
+	parskip=half,			% Space (in lines) between paragraphs
+	headheight = 12pt,		% Header hight
+	headsepline,			% Line after header
+	footheight = 16pt,		% Footer height
+	footsepline,			% Line before footer
+	abstracton,				% Abstract headline
+	DIV=calc,				% Calculate print space
+	BCOR=8mm,				% BCOR settings (Bindekorrektur)
+	headinclude=false,		% Exclude header from print space
+	footinclude=false,		% Exclude footer from print space
+	listof=totoc,			% Show List of Figures/Tables in Contents
+	toc=bibliography,		% Show Bibliography in Contents
+]{scrreprt}					% Koma-Script report-class, long document: scrreprt, short document: scrbook
+
+\usepackage{xstring}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% iflang command definition
+\newcommand{\iflang}[2]{%
+	\IfStrEq{\documentLanguage}{#1}{#2}{}%
+}
+
+% ifDocType comand definition
+\newcommand{\ifDocType}[3]{%
+	\IfStrEq{\documentType}{#1}{#2}{#3}%
+}
+
+% ifMultipleAuthors definition
+\newcommand{\ifMultipleAuthors}[2]{%
+	\IfStrEq{\multipleAuthors}{true}{#1}{#2}%
+}
+
+% if restriction note
+\newcommand{\ifShowRestriction}[2]{%
+	\IfStrEq{\showRestriction}{true}{#1}{#2}%
+}
+
+% if abstract
+\newcommand{\ifShowAbstract}[2]{
+	\IfStrEq{\showAbstract}{true}{#1}{#2}
+}
+
+% ifSpecialDocument definition
+\newcommand{\ifSpecialDocument}[2]{\IfStrEqCase{\documentType}{%
+		{T2_1000}{#2\ignorespaces}%
+			{T2\_2000}{#2\ignorespaces}%
+			{T2\_3100}{#2\ignorespaces}%
+			{T2\_3300}{#2\ignorespaces}%
+	}[#1\ignorespaces]%
+}
+
+% Include main settings
+\input{settings/main}
+
+% Include document settings
+\input{settings/document}
+
+% Load language specific Strings
+\input{lang/\documentLanguage}
+
+% Load language specific babel package
+\iflang{de}{\usepackage[english, ngerman]{babel}}
+\iflang{en}{\usepackage[ngerman, english]{babel}}
+
+% Add comment feature
+\newcommand{\comment}[1]{\par {\bfseries \color{blue} #1 \par}}
+
+
+%%%%%%% Package Includes %%%%%%%
+
+\usepackage[margin=\margin,foot=1cm]{geometry}
+\usepackage[activate]{microtype}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{makeidx}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{array}
+\usepackage{calc}
+\usepackage[right]{eurosym}
+\usepackage{wrapfig}
+\usepackage{pgffor}
+\usepackage[perpage, hang, multiple, stable]{footmisc}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage{listings}
+\usepackage{scrhack}
+\usepackage[obeyFinal,backgroundcolor=yellow,linecolor=black]{todonotes}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{\documentFont}
+\usepackage[%
+	pdftitle={\documentTitle},
+	pdfauthor={\documentAuthor},
+	pdfsubject={\documentType},
+	pdfcreator={pdflatex, LaTeX with KOMA-Script},
+	pdfpagemode=UseOutlines,       % Show Contents while opening
+	pdfdisplaydoctitle=true, 		% Show document title instead of file name
+	pdflang={\documentLanguage}, % Document language
+]{hyperref}
+\usepackage{bookmark}
+\usepackage[nonumberlist,toc]{glossaries}
+% \usepackage{glossaries}
+\usepackage[automake]{glossaries-extra}
+
+% Generate glossary
+\makeglossaries
+
+% Load colors
+\defineColors{}
+
+% Set Titel, Autor and Date
+\title{\documentTitle}
+\author{\documentAuthor}
+\date{\datum}
+
+
+% PDF link settings
+\hypersetup{%
+	colorlinks=true,
+	linkcolor=LinkColor,
+	citecolor=LinkColor,
+	filecolor=LinkColor,
+	menucolor=LinkColor,
+	urlcolor=LinkColor,
+	bookmarksnumbered=true
+}
+
+% Captions fontsize
+\addtokomafont{caption}{\small}
+\addtokomafont{chapter}{\Large\textmd}
+\addtokomafont{section}{\textmd}
+
+% Bibliographie settings
+\iflang{de}{%
+	\usepackage[
+		backend=biber,		% recommended. Alternative: bibtex
+		bibwarn=true,
+		bibencoding=utf8,	         % If .bib file is encoded with utf8, otherwise ascii
+		sortlocale=de_DE,
+		style=\quoteStyle,
+	]{biblatex}
+}
+\iflang{en}{%
+	\usepackage[
+		backend=biber,		% recommended. Alternative: bibtex
+		bibwarn=true,
+		bibencoding=utf8,        % If .bib file is encoded with utf8, otherwise ascii
+		sortlocale=en_US,
+		style=\quoteStyle,
+	]{biblatex}
+}
+
+\addbibresource{bibliographie.bib}
+
+% Hurenkinder und Schusterjungen verhindern
+% http://projekte.dante.de/DanteFAQ/Silbentrennung
+\clubpenalty = 10000 % schließt Schusterjungen aus (Seitenumbruch nach der ersten Zeile eines neuen Absatzes)
+\widowpenalty = 10000 % schließt Hurenkinder aus (die letzte Zeile eines Absatzes steht auf einer neuen Seite)
+\displaywidowpenalty=10000
+
+% Graphicspath
+\graphicspath{{images/}}
+
+% frequently used programing languages
+\lstloadlanguages{PHP,Python,Java,C,C++,bash}
+
+\listingsettings{}
+% Rename Listings
+\renewcommand\lstlistingname{\listingPhrase}
+\renewcommand\lstlistlistingname{\listListingPhrase}
+\def\lstlistingautorefname{\authorListingPhrase}
+
+% Spaces in tables
+\setlength{\tabcolsep}{\tableColumnMargin}
+\renewcommand{\arraystretch}{\tableRowMargin}

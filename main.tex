@@ -1,0 +1,112 @@
+%!TEX root = ./main.tex
+
+%%**************************************************************
+%%
+%% DHBW Heidenheim - Template for Bachelor Thesis
+%%
+%% Bevor usisng this template please have a look at the REAMDME.md file
+%%
+%%**************************************************************
+
+\input{ads/header}
+
+\input{content/glossary}
+
+\begin{document}
+
+% Cover
+\begin{spacing}{1}
+	\input{ads/cover}
+\end{spacing}
+\newpage
+
+\pagenumbering{Roman}
+
+% Restriction notices
+\ifDocType{T2\_3100}{%
+	% no restricition notices for semester paper
+}{%
+	\input{ads/restrictionNotices}
+	\newpage
+}%
+
+% Declaration
+\input{ads/declaration}
+\newpage
+
+% Abstract
+\input{content/abstract}
+\newpage
+
+% only page number in footer
+\pagestyle{plain}
+
+% space bevore chapter headline
+\RedeclareSectionCommand[beforeskip=\chapterMargin]{chapter}
+
+% Contents
+\begin{spacing}{1}
+	
+	\begingroup
+
+	% set subchapter depth
+	\setcounter{tocdepth}{2}
+
+	\tableofcontents
+	\clearpage
+	\endgroup
+\end{spacing}
+\newpage
+
+% Acronyms
+\cleardoublepage
+\input{content/acronyms}
+
+% List of Figures
+\cleardoublepage
+\listoffigures
+
+%List of Tables
+\cleardoublepage
+\listoftables
+
+% List of Listings
+\cleardoublepage
+\lstlistoflistings
+\cleardoublepage
+
+\pagenumbering{arabic}
+
+\pagestyle{headings}
+
+%Content
+\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
+		\edef\FileName{content/chapter/\i .tex}%
+		\IfFileExists{\FileName}{%
+			\input{\FileName}
+		}
+		{%
+			%				No chapter available
+		}
+	}
+
+\clearpage
+
+% Bibilography
+\cleardoublepage
+\printbibliography
+
+% % Glossar
+% \input{content/glossary}
+\cleardoublepage
+
+% \glsadd{utc}\glsadd{adt}
+% \printglossaries[]
+\printglossary[style=altlist,title=\glossaryPhrase]
+
+% Appendix
+\clearpage
+\appendix
+\input{content/appendix}
+
+\end{document}

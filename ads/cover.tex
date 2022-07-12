@@ -1,0 +1,61 @@
+%!TEX root = ../main.tex
+
+% Cover Template DHBW:
+% https://www.dhbw.de/fileadmin/user_upload/Dokumente/Dokumente_fuer_Studierende/Titelblatt_Muster.docx
+
+\begin{titlepage}
+	\vspace*{-2cm}
+	\begin{minipage}[c]{.27\textwidth}
+		\ifDocType{T2\_3100}{}{%
+			\includegraphics[width=\linewidth,keepaspectratio]{images/logo.png}
+		}%
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{.27\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,keepaspectratio]{images/cover/DHBW-Logo.pdf}
+	\end{minipage}
+	\begin{center}
+		\doublespacing{
+		\vspace*{30mm}	{\textsf{\Large {\documentTitle}}}}\\
+		\vspace{12mm}	{\large\textsf{\textbf{\scshape {\documentTypePhrase}}}}\\
+		
+		% degre only for bachelor thesis
+		\ifDocType{T2\_3300}{
+			\vspace*{12mm}	\degreePhrase\\
+			\vspace*{3mm}		{\textbf \degree}\\
+		}
+
+		\IfStrEq{\showLecture}{true}{
+			\vspace*{12mm}	\lecturePhrase\\
+			\vspace*{0mm}		{\textbf \lecture}\\
+		}
+
+		\vspace{12mm}	\departmentPhrase{} \department\\
+    \vspace{0mm}		\locationUniversityPhrase{} \locationUniversity\\
+		\vspace{12mm}	\documentAuthorPhrase\\
+		\vspace{3mm}		{\large\textbf \documentAuthor}\\
+		\vspace{12mm}	\releaseDate\\
+	\end{center}
+	\vfill
+	\begin{spacing}{1.2}
+	\begin{tabbing}
+		mmmmmmmmmmmmmmmmmmmmmmmmmm             \= \kill
+		\textbf{\documentPeriodPhrase}       \>  \documentPeriod\\
+		\textbf{\matriculationNumberPhrase, \coursePhrase}  \>  \matriculationNumber, \course\\
+
+		% no company for the semester paper and special documents
+		\ifDocType{T2\_3100}{}{%
+			\ifSpecialDocument{}{%
+				\textbf{\companyPhrase}                  \>	 \companyName, \companyLocation\\
+				\textbf{\tutorPhrase}               \>  \tutor\\
+			}%
+		}%
+
+		% evaluator only for bachelor thesis
+		\ifDocType{T2\_3300}{%
+			\textbf{\evaluatorPhrase}              \>  \evaluator
+		}{}
+	\end{tabbing}
+	\end{spacing}
+\end{titlepage}

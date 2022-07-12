@@ -1,0 +1,32 @@
+%!TEX root = ../main.tex
+
+\newcommand{\degreePhrase}{für die Prüfung zum}
+\newcommand{\lecturePhrase}{für die Vorlesung}
+\newcommand{\departmentPhrase}{des Studiengangs}
+\newcommand{\locationUniversityPhrase}{an der Dualen Hochschule Baden-Württemberg}
+\newcommand{\documentAuthorPhrase}{von}
+\newcommand{\documentPeriodPhrase}{Bearbeitungszeitraum}
+\newcommand{\matriculationNumberPhrase}{Matrikelnummer}
+\newcommand{\coursePhrase}{Kurs}
+\newcommand{\companyPhrase}{Ausbildungsbetrieb}
+\newcommand{\companyTutorPhrase}{Betreuer der Ausbildungsfirma}%
+
+\newcommand{\tutorPhrase}{Betreuer*in des Dualen Partners}
+\newcommand{\evaluatorPhrase}{Gutachter*in der Dualen Hochschule}
+\newcommand{\restrictionNoticesPhrase}{Sperrvermerk}
+\newcommand{\declarationPhrase}{Erklärung}
+\newcommand{\glossaryPhrase}{Glossar}
+\newcommand{\appendixPhrase}{Anhang}
+\newcommand{\listingPhrase}{Listing}
+\newcommand{\listListingPhrase}{Listings}
+\newcommand{\authorListingPhrase}{Listing}
+\newcommand{\acronymsPhrase}{Abkürzungsverzeichnis}
+
+\newcommand{\documentTypePhrase}{%
+  \IfStrEqCase{\documentType}{%
+      {T2\_1000}{Projektarbeit}%
+      {T2\_2000}{Projektarbeit}%
+      {T2\_3100}{Studienarbeit}%
+      {T2\_3300}{Bachelorarbeit}%
+  }[{\documentType\ignorespaces}]
+}
