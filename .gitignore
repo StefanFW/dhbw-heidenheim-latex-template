@@ -242,3 +242,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Add inkscape directory
+svg-inkscape
