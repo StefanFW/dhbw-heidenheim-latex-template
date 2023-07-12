@@ -22,6 +22,8 @@
         "*.run.xml": true,
         "*.synctex.gz": true,
         "*.toc": true,
-        "*.lof": true
+        "*.lof": true,
+        "*.gls": true,
+        "*.glg": true
     }
 }
