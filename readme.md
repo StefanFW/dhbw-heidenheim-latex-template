@@ -1,11 +1,17 @@
 # DHBW Latex Ravensburg Template
 
-Dieses LaTeX Template ist für alle Arbeiten DHBW geeignet.
-Die Korrekheit des Templates ist nicht durch die Autoren garantiert.
+Dieses LaTeX Template ist für alle Arbeiten DHBW Ravensburg geeignet.
+Die Korrektheit des Templates ist nicht durch die Autoren garantiert.
 Siehe dazu [License](./LICENSE)
 
 Wie ein Workflow mit Git als Versionierungstool umgesetzt werden kann siehe
 [hier](https://stackoverflow.com/a/6190412)
+
+## Anforderungen
+
+Zum Verwenden des Templates sind folgende Pakete empfohlen:
+- [TeX](https://www.latex-project.org/get/)
+- Inkscape (notwendig für SVG Support)
 
 **Inhalt:**
 * [Templatestruktur](#templatestruktur)
