@@ -1,0 +1,37 @@
+name: Build LaTeX document
+on:
+  push:
+    tags:
+       - 'v*.*.*'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build LaTeX
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: main.tex # Specify the main LaTeX file
+        latexmk_shell_escape: true # For svg support
+        extra_system_packages: "inkscape"
+    
+    - name: Get log
+      if: always()
+      run: cat main.log
+    
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        name: Release ${{ github.ref_name }}
+        tag: ${{ github.ref_name }}
+        prerelease: false
+        artifactErrorsFailBuild: true
+        artifacts: main.pdf
+        artifactContentType: application/pdf
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+          Changes in this release:
+          - Updated PDF
