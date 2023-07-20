@@ -4,19 +4,16 @@
 
 %title wird unter dem Bsp. abgedruckt
 %caption wird im Verzeichnis abgedruckt
-%label wird zum referenzieren benutzt, muss einzigartig sein.
-
-\begin{lstlisting}[caption=Code-Beispiel, label=Bsp.1]
+\begin{lstlisting}[caption=Code-Beispiel, label=lst:example1]
 public class HelloWorld {
 	public static void main (String[] args) {
-		// Ausgabe Hello World!
 		System.out.println("Hello World!");
 	}
 }
 \end{lstlisting}
 
-%language ändert die Sprache. (Wenn nur eine Sprache verwendet wird, kann diese Sprache in development.tex geändert werden. Standardmäßig Java.)
-\begin{lstlisting}[caption=Python-Code, label=Python-Code, title=Titel des Python-Codes,language=Python]
+% language zur Anpassung der Sprache. (Wenn nur eine Sprache verwendet wird, kann diese Sprache in development.tex geändert werden. Standardmäßig Java.)
+\begin{lstlisting}[caption=Python-Code, label=lst:python-code, title=Titel des Python-Codes,language=Python]
 def quicksort(liste):
 if len(liste) <= 1:
 	return liste
@@ -33,9 +30,8 @@ Following the antics and adventures of May Mayday Parker, this Spider-book has e
 Collects Alias \#1-28, What If. Jessica Jones had Joined the Avengers \acp{IS}.
 In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.
 
-Manchmal braucht man auch Tabellen. 
-Ein Beispiel sieht man in Tabelle \ref{tabelle1}, welche mit einem beliebigen Label bezeichnet werden kann. 
-Die Tabelle taucht dann automatisch im Tabellenverzeichnis auf.
+Tabelle~\ref{tabelle1}.
+Die Tabelle taucht automatisch im Tabellenverzeichnis auf.
 
 \begin{table}[ht!]
 	\centering{
@@ -55,7 +51,6 @@ Die Tabelle taucht dann automatisch im Tabellenverzeichnis auf.
 \end{table}
 
 \section{Verweis auf Code}
-Verweis auf den Code \autoref{Bsp.1}.\\
-und der Python-Code \autoref{Python-Code}.
+Verweis auf den Code \autoref{lst:example1}.
 
 Zweite Erwähnung einer Abkürzung \ac{AGPL} (Erlärung wird nicht mehr angezeigt)
