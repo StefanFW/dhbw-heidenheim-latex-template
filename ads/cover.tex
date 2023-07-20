@@ -17,7 +17,7 @@
 	\end{minipage}
 	\begin{center}
 		\doublespacing{
-		\vspace*{30mm}	{\textsf{\Large {\documentTitle}}}}\\
+		\vspace*{30mm}	{\Large {\documentTitle}}}\\
 		\vspace{12mm}	{\large \textbf{\documentTypePhrase}}\\
 		
 		% degre only for bachelor thesis
@@ -32,29 +32,29 @@
 		}
 
 		\vspace{12mm}	\departmentPhrase{} \department\\
-    \vspace{0mm}		\locationUniversityPhrase{} \locationUniversity\\
+	\vspace{0mm}		\locationUniversityPhrase{} \locationUniversity\\
 		\vspace{12mm}	\documentAuthorPhrase\\
-		\vspace{3mm}		{\large\textbf \documentAuthor}\\
+		\vspace{3mm}	{\large\textbf \documentAuthor}\\
 		\vspace{12mm}	\releaseDate\\
 	\end{center}
 	\vfill
 	\begin{spacing}{1.2}
 	\begin{tabbing}
-		mmmmmmmmmmmmmmmmmmmmmmmmmm             \= \kill
-		\textbf{\documentPeriodPhrase}       \>  \documentPeriod\\
-		\textbf{\matriculationNumberPhrase, \coursePhrase}  \>  \matriculationNumber, \course\\
+		mmmmmmmmmmmmmmmmmmmmmmmmmm							\= \kill
+		\textbf{\documentPeriodPhrase}						\>  \documentPeriod\\
+		\textbf{\matriculationNumberPhrase, \coursePhrase}	\>  \matriculationNumber, \course\\
 
 		% no company for the semester paper and special documents
 		\ifDocType{T2\_3100}{}{%
 			\ifSpecialDocument{}{%
-				\textbf{\companyPhrase}                  \>	 \companyName, \companyLocation\\
-				\textbf{\tutorPhrase}               \>  \tutor\\
+				\textbf{\companyPhrase}						\>	 \companyName, \companyLocation\\
+				\textbf{\tutorPhrase}						\>  \tutor\\
 			}%
 		}%
 
 		% evaluator only for bachelor thesis
 		\ifDocType{T2\_3300}{%
-			\textbf{\evaluatorPhrase}              \>  \evaluator
+			\textbf{\evaluatorPhrase}						\>  \evaluator
 		}{}
 	\end{tabbing}
 	\end{spacing}
