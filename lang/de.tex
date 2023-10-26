@@ -11,17 +11,17 @@
 \newcommand{\companyPhrase}{Ausbildungsbetrieb}%
 
 \newcommand{\tutorPhrase}{%
-	\IfStrEqCase{\documentType}{%
-		{T2\_1000}{Gutachter}%
-      	{T2\_2000}{Gutachter}%
-      	{T2\_3100}{Gutachter}%
-      	{T2\_3300}{Erstgutachter}%
-	}[Gutachter]
+  \IfStrEqCase{\documentType}{%
+    {T2\_1000}{Gutachter}%
+      {T2\_2000}{Gutachter}%
+      {T2\_3100}{Gutachter}%
+      {T2\_3300}{Erstgutachter}%
+  }[Gutachter]
 }
 
 \newcommand{\evaluatorPhrase}{Zweitgutachter}
 \newcommand{\restrictionNoticesPhrase}{Sperrvermerk}
-\newcommand{\declarationPhrase}{Erklärung}
+\newcommand{\declarationPhrase}{Erklärung zur Eigenleistung}
 \newcommand{\glossaryPhrase}{Glossar}
 \newcommand{\appendixPhrase}{Anhang}
 \newcommand{\listingPhrase}{Listing}
@@ -31,7 +31,7 @@
 
 \newcommand{\documentTypePhrase}{%
   \IfStrEqCase{\documentType}{%
-      {T2\_1000}{Projektarbeit}%
+    {T2\_1000}{Projektarbeit}%
       {T2\_2000}{Projektarbeit}%
       {T2\_3100}{Studienarbeit}%
       {T2\_3300}{Bachelorarbeit}%

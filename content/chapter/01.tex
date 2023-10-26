@@ -1,47 +1,37 @@
 %!TEX root = ../../main.tex
 
-\chapter{Das erste Kapitel}
-Dies ist der Text des ersten Kapitels.Nur erwähnte Literaturverweise werden auch im Literaturverzeichnis gedruckt: \cite[S.12 ff]{baumgartner:2002}, \cite[S.1-3]{dreyfus:1980}
+\chapter{Einleitung}
+\label{chapter:1}
 
-Meine erste Fußnote\footnote{Ich bin eine Fußnote} darf auch nicht fehlen. Fußnoten sind dazu da, dass man Begriffe näher erklärt, die aber dem vertrauten Leser wahrscheinlich eh bekannt sind. 
+\section{Einführung in das Thema}
 
-\begin{figure}[h]
-\centering
-\includegraphics[height=.8\textwidth]{logo.png}
-\caption{Das Logo der Musterfirma\footnotemark}
-\end{figure}
+Der Klimawandel wird in vielen Teilen unserer Welt in den letzten Jahren deutlich sichtbar.  Die Klimapolitik nimmt einen höheren Stellenwert in unserer Gesellschaft an, Länder und Nationen setzen sich ambitionierte Klimaziele zum Schutz der Erde, es bilden sich vermehrt Gruppierung, die gegen den Klimawandel ankämpfen. Aber vor allem ist der Begriff Klimakrise heutzutage jedem Menschen ein Begriff. Viele Städte planen deshalb Maßnahmen, um ihre BürgerInnen über ihr Konsumverhalten aufmerksam zu machen und so zum Beispiel die Emissionsproduktion einzugrenzen.  Die Stadt Karlsruhe hat deshalb in Kooperation mit dem OK Lab Karlsruhe und der Dualen Hochschule Baden-Württemberg eine CO2-Runter-App veröffentlicht. Die Webseite befasst sich mit dem ökologischen Fußabdruck der BürgerInnen Karlsruhe und besteht im Grunde aus zwei Hauptseiten: dem CO2-Rechner und dem Dashboard. Da das Projekt bereits vor einigen Jahren gestartet wurde und zwischenzeitlich Verbesserungsvorschläge und verschiedenste Bugs und Fehler aufgetreten sind, soll die Arbeit an dem Projekt erneut aufgenommen werden.
+
+% TODO: die vlt einarbeiten oder sind die sachen schon drin ?
+% Weiß gerade spontan nicht ob davon alles drin ist
+% > Hintergrund und Relevanz des Klimawandels
+% > Bedeutung der Klimapolitik und Bürgerbeteiligung
+% > Einführung in die CO2-Runter-App
+
+\section{Ziel der Arbeit}
+
+Das Ziel dieser Studienarbeit liegt darin, die CO2-Runter-App der Stadt Karlsruhe weiterzuentwickeln. Die Weiterentwicklung der Applikation lässt sich hierbei in zwei große Themenblöcke aufteilen. Zum einen sollen vorhandene Bugs innerhalb der Applikation identifiziert und behoben werden. Da nicht alle Funktionalitäten der Webseite einwandfrei funktionieren, soll eine Komplettanalyse der Applikation durchgeführt werden und alle gefundenen Probleme gelöst werden. Auf der anderen Seite soll bei der Weiterentwicklung der CO2-Runter-App der Nutzer mehr in den Vordergrund rücken. Mithilfe einer Umfrage sollen potenzielle Nutzer der Webseite zu verschiedenen Kategorien befragt werden. Unter Zuhilfenahme der erhobenen Daten soll die CO2-Runter-App in einer Art weiterentwickelt werden, so dass möglichst viele Personen die Webseite nutzen und dazu angeregt werden ihren CO2 Fußabdruck auszurechnen. In der Umfrage wird es aus diesem Grund sowohl um die Frage des Designs als auch um die Motivation zum Nutzen der App gehen.
+
+Idee:
+
+Die erhobenen Daten sollen dazu verwendet werden, die CO2-Runter-App weiterzuentwickeln, um eine breite Nutzerbasis anzusprechen und Anreize für die Berechnung ihres CO2-Fußabdrucks zu schaffen. Die Umfrage wird daher sowohl Fragen zum Design als auch zur Motivation zur Nutzung der App behandeln.
 
 
+% TODO: die vlt einarbeiten oder sind die sachen schon drin ?
+% Weiß gerade spontan nicht ob davon alles drin ist
+% > Identifikation und Behebung von bestehenden Problemen in der App
+% > Nutzerzentrierte Weiterentwicklung der CO2-Runter-App
+% > Zweck der Umfrage und Datenerhebung
 
-%\begin{wrapfigure}{r}{.4\textwidth}
-%\centering
-%\includegraphics[height=.35\textwidth]{logo.png}
-%\vspace{-15pt}
-%\caption{Das Logo der Musterfirma\footnotemark}
-%\end{wrapfigure}
-%Quelle muss in Fußnote stehen (da sonst aufgrund eines Fehlers nicht kompiliert
-% wird)
-\footnotetext{aus \cite{mustermann:2012}}
-Looking for the one superhero comic you just have to read. Following the antics and adventures of May Mayday Parker, this Spider-book has everything you could want in a comic--action, laughs, mystery and someone in a Spidey suit. Collects Alias \#1-28, What If. Jessica Jones had Joined the Avengers. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.
+\section{Fragestellung der Arbeit}
 
-Manchmal braucht man auch Formeln. LaTeX hat einen sehr guten Formeleditor, der eigentlich selbsterklärend ist. Die Formeln weden automatisch nummeriert, aber man kann immer im Text mit einem Label wie Formel \ref{xyz} Bezug nehmen.
-
-\begin{equation}
-t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \sqrt{\frac{l}{g}} F(k,\varphi)
-\label{xyz}
-\end{equation}
-
-Manchmal braucht man Aufzählungen, die man in einzelnenen Punkten aufführt.
-\begin{itemize}
-\item Dies ist der erste Punkt, der aufgeführt wird.
-\item Dies ist der zweite Punkt, der aufgeführt wird. Manchmal will man auch etwas \textbf{fett} oder \textit{kursiv} oder \textbf{\textit{beides in Kombination}}  drucken.
-\item Dies ist der dritte Punkt, der aufgeführt wird.
-\end{itemize}
-
-Once upon a time, Jessica Jones was a costumed super-hero, just not a very good one. First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up. In a city of Marvels, Jessica Jones never found her niche. The classic adventures of Spider-Man from the early days up until the 90s. Looking for the one superhero comic you just have to read. In her inaugural arc, Jessicas life immediately becomes expendable when she uncovers the potentially explosive secret of one heros true identity.
-
-Erste Erwähnung eines Akronyms wird als Fußnote angezeigt. Jede weitere wird
-nur verlinkt: \acf{AGPL}. \cite{fsf:2007}
-
-Verweise auf das Glossar: \gls{Glossareintrag}, \glspl{Glossareintrag}
-
+% TODO: die vlt einarbeiten oder sind die sachen schon drin ?
+% > Wie kann ich Personen dazu motivieren ihren CO2 Fußabdruck zu reduzieren
+% > Wie kann ich Klimafreundliches Verhalten Motivieren (die Personen welche die App nutzen)
+% > Motivation zur Reduktion des CO2-Fußabdrucks
+% > Förderung klimafreundlichen Verhaltens bei App-Nutzern
