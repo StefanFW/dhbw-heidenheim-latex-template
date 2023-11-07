@@ -58,6 +58,7 @@ Der Standard für die Webentwicklung ist die Verwendung von JavaScript, \acf{HTM
 Die Frontend-Entwicklung von Webanwendungen umfasst hierbei die Verwendung von Frameworks wie React, Angular und Vue. Diese wiederum basieren auf der Programmiersprache JavaScript und ermöglichen die Erstellung von wiederverwendbaren Komponenten, auch bekannt als Komponentenarchitektur. Die Verwendung von Frameworks ermöglicht darüber hinaus auch die Anwendung moderner Entwicklungspraktiken wie Komponententests, Test-Driven-Development und Continuous Integration. Die Verwendung von Frameworks ermöglicht es Entwicklern, die Entwicklungseffizienz zu verbessern und die Wartbarkeit der Anwendung zu erhöhen. Die zuvor angesprochenen Frameworks sind nur einige der vielen Frameworks, die existieren. Es gibt eine Vielzahl von Frameworks, die alle ihre eigenen Stärken und Schwächen haben. Die Wahl des richtigen Frameworks hängt von den Anforderungen des Projekts ab und sollte sorgfältig abgewogen werden, um die beste Benutzererfahrung zu gewährleisten.\cite{modern-webdevelopment:1, modern-webdevelopment:2}
 
 \subsection{Programmiersprache JavaScript}
+\label{chapter:3-javaScript}
 
 JavaScript ist eine interpretierte Programmiersprache, welche hauptsächlich Anwendung bei Webanwendungen findet. Sie wird dafür genutzt, um Interaktionen als auch die dynamische Veränderung auf der Webseite zu ermöglichen. Dadurch kommt JavaScript größtenteils im Browser vor, also auf der Seite des Clients. JavaScript kann neben dem sehr verbreiteten objektorientierten Programmierstil auch als prozedurale Programmiersprache eingesetzt werden, dadurch ist JavaScript sehr flexibel, was einerseits vorteilhaft ist, aber auch zum Nachteil führt, da es keine konkreten Richtlinien gibt, woran man sich halten sollte. Aber JavaScript ist nicht nur im Programmierstil sehr flexibel, denn dadurch, dass es nur eine interpretierte Programmiersprache ist, besitzt es weitere Nachteile gegenüber von kompilierten Sprachen.
 
@@ -107,9 +108,29 @@ Wie schon zuvor erwähnt, ist die objektorientierte Programmierung sehr verbreit
 
 JavaScript ist in dieser Arbeit von Relevanz, da jedes Frontend Framework welche in späteren Abschnitten angesprochen wird darauf basiert und diverse Konzepte von JavaScript verwendet. Zudem ist JavaScript die einzige Programmiersprache, welche im Browser ausgeführt werden kann. Das bedeutet, dass JavaScript die einzige Programmiersprache ist, welche direkt mit dem Nutzer interagieren kann. Das ist ein großer Vorteil, da dadurch die Interaktion mit dem Nutzer direkt im Browser stattfinden kann, ohne dass der Browser die Webseite neu laden muss. Dadurch können Webanwendungen wie die CO2-Runter-App eine bessere Nutzererfahrung bieten, da die Interaktion mit dem Nutzer schneller und flüssiger ist. Eine detailliertere Beschreibung von JavaScript findet man auf der Mozilla Developer Network JavaScript Webseite.\cite{javascript}
 
-\subsection*{JavaScript XML}
+\subsection{JavaScript XML}
 
-% TODO: das vlt noch ein wenig erklären weil wegen React vermutlich viel JSX im Code auftreten wird ? kann man aber auch später machen
+\acl{JSX}, auch bekannt als \acs{JSX}, erweitert die Syntax um \acl{XML}. Dies ermöglicht das Schreiben und Verwenden von Code, der \acs{HTML} ähnelt, innerhalb einer JavaScript-Datei.
+
+Im vorherigen \hyperref[chapter:3-javaScript]{Abschnitt} wurde auf die Programmiersprache JavaScript und deren wichtige Verwendung im Webumfeld eingegangen. Früher war es typisch, den Logikteil vom Darstellungsteil getrennt zu programmieren und zu speichern, wie in der folgenden Grafik dargestellt:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/02/ReactJS-JSX.jpeg}
+    \caption{Einfache Grafik von Darstellung und Logik bei Webseiten\cite{react-jsx-html, react-jsx-javascript}}
+\end{figure}
+
+Doch aufgrund der zunehmenden Interaktivität und der wachsenden Größe von Webseiten wird heutzutage vermehrt JavaScript und weniger \acs{HTML} und \acs{CSS} verwendet. Dies hat dazu geführt, dass die Grenzen zwischen Logik und Darstellung verschwimmen. Dadurch ist die Trennung zwischen Logik und Darstellung in \acs{JSX} nicht mehr so klar auseinanderzusetzen. Wie in der folgenden Grafik vereinfacht dargestellt:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/02/ReactJS-JSX-Component.jpeg}
+    \caption{JSX Grafik von Darstellung und Logikverschmelzung\cite{react-jsx-form-component, react-jsx-sidebar-component}}
+\end{figure}
+
+Dadurch kann die Darstellung und Logik von zusammenhängenden Komponenten beieinander sein, erhöht das die Möglichkeit, dass der Code aktuell bleibt, und Code oder Komponenten, die wiederum nichts miteinander zu tun haben, sind separiert durch verschiedene JavaScript-Dateien. Somit können Entwickler:innen besser strukturierten Code schreiben, der sowohl die Logik als auch die Darstellung umfasst. Dieser Ansatz bietet eine nahtlose Integration von JavaScript-Funktionalitäten in die Gestaltung von Benutzeroberflächen. Anstatt verschiedene Dateien für \acs{HTML}, \acs{CSS} und JavaScript zu haben, ermöglicht \acs{JSX} das Verfassen von Komponenten, die sowohl Struktur als auch Verhalten vereinen. Dadurch entsteht eine vereinfachte, effizientere Entwicklung von Webanwendungen.
+
+Die Einführung von \acs{JSX} hat die Art und Weise, wie Webentwicklung betrieben wird, maßgeblich verändert, und sie spielt eine bedeutende Rolle in Frameworks wie ReactJS, Vue und anderen modernen Bibliotheken zur Entwicklung von Benutzeroberflächen. Diese Entwicklung hat dazu geführt, dass Entwickler:innen leistungsstarke, interaktive Webanwendungen schneller und effektiver erstellen können.\cite{react-jsx-explained}
 
 \subsection{Komponentenarchitektur}
 
