@@ -7,7 +7,91 @@
 % > Dann die neuen Features einbauen (Probleme wurden ja gefixed) (Darauf aufbauen dann die UI darauf aufbauen)
 % > evlt. weitere Features einbauen (Weitere Userzentrierte Features ausbauen)
 
+In den vorherigen Kapiteln wurde die Webseite analysiert, und die Nutzerumfrage wurde durchgeführt und ausgewertet. Diese Erkenntnisse sollen nun genutzt werden, um eine bessere Version der Webseite zu entwickeln. Bevor das jedoch geschehen kann, muss die bisherige Codebasis auf ein anderes Frontend-Framework migriert werden, da die Zufriedenheit mit dem vorherigen Framework nicht sehr hoch war. Nach der Migration werden dennoch die Ergebnisse der Nutzerumfrage genutzt, um die Webseite zu verbessern. Dabei wird auf die Ergebnisse der Nutzerumfrage eingegangen, und die Webseite wird so angepasst, dass die Nutzererfahrung verbessert wird. Außerdem werden neue Features und Funktionen hinzugefügt, die die Nutzererfahrung verbessern und die Nutzer dazu anregen sollen, die Webseite zu nutzen.
+
+\section{Frameworkwechsel und Verbesserungen}
+
+\subsection{Motivation für den Frameworkwechsel}
+
+Die Webseite wurde bisher unter Verwendung des Frontend-Frameworks \textbf{ReactJS} entwickelt, das aufgrund seiner Beliebtheit bei vielen Entwicklern weit verbreitet ist. Dennoch wurde die Entscheidung getroffen, das Framework zu wechseln, bedingt durch verschiedene Herausforderungen und auch aufgrund von Kompetenzüberlegungen der Entwickler. Durch den Übergang zu einem anderen Framework soll die Webentwicklung vereinfacht und die Nutzererfahrung verbessert werden. Insbesondere sollen bekannte Probleme wie fehlerhaftes State Management vermieden werden.
+
+Wie bereits im \hyperref[chapter:3-frontend-frameworks]{Grundlagenkapitel} erläutert, wird das neue Framework \textbf{Vue} eingeführt, das ebenfalls weit verbreitet ist und von vielen Entwicklern genutzt wird.
+
+\subsection{Umsetzung des Frameworkwechsels}
+
+Die Umsetzung dabei ist zunächst nicht zu kompliziert, da das gesamte Projekt in verschiedene Teile unterteilt war, wie das Frontend der Webseite, das Backend und die Datenbank. Somit musste lediglich der Ordner, der das Frontend beinhaltet, ausgetauscht werden. Das Backend und die Datenbank blieben unverändert. Um das Frontend dann mit dem neuen Framework (\textbf{Vue}) auszustatten, muss zunächst der Inhalt des bisherigen Ordners, der das Frontend beinhaltet, gelöscht werden. Daraufhin konnte über das Werkzeug \textbf{Vite} ein \textbf{Vue}-Projekt erstellt werden, das auch direkt \textbf{TypeScript} unterstützt. Dies hilft beim Entwickeln, schon frühzeitig Probleme zu entdecken und zu lösen. Im folgenden Code Snippet ist zu sehen, wie das Projekt mit \textbf{Vite} erstellt wurde.
+
+\begin{lstlisting}[language={bash}, caption={Initialisierung des Vue Projektes mit Vite \cite{vitejs-getting-started}}]
+npm create vite@latest
+\end{lstlisting}
+
+Nachdem das Projekt erstellt wurde, konnte der Inhalt des Projekts in den alten und leeren Ordner kopiert werden. Danach mussten lediglich noch Konfigurationen angepasst werden, ebenso wie Dockerfiles und Docker Compose. Die Konfigurationen betreffen das \textbf{TypeScript}- und \textbf{Vue}-Projekt, während die Dockerfiles und Docker Compose für die Containerisierung der Webseite zuständig sind. Die entsprechenden Konfigurationen und Dockerfiles sind im folgenden Code Snippet zu sehen.
+
+\begin{lstlisting}[language={bash}, caption={Dockerfile für das Vue Projekt}]
+# Use the official Node.js image as the base image
+FROM node:16
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy only the package.json and package-lock.json files to leverage Docker cache
+COPY package.json ./
+COPY package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the entire project files to the container
+COPY ./ ./
+
+# Expose the port that the Vue app will run on (change this if your app uses a different port)
+EXPOSE 3000
+
+# Build the Vue project
+RUN npm run build
+
+# Command to start the Vue app
+CMD ["npm", "run", "start"]
+\end{lstlisting}
+
+In der Docker Compose-Datei wird der Container für das Vue-Projekt erstellt und konfiguriert. Hierbei muss dann noch explizit der Port angegeben werden, auf dem die Webseite laufen soll.
+
+\begin{lstlisting}[language={bash}, caption={Docker Compose für das Vue Projekt}]
+version: "3.8"
+
+client:
+stdin_open: true
+environment:
+    - WDS_SOCKET_PORT=3050
+    - CHOKIDAR_USEPOLLING=true
+    - WATCHPACK_POLLING=true
+build:
+    dockerfile: Dockerfile
+    context: ./client
+volumes:
+    - /app/node_modules
+    - ./client:/app
+ports:
+    - "3000:3000"
+\end{lstlisting}
+
+Das alles funktioniert reibungslos. Außerdem muss in der \texttt{vite.config.ts}-Datei noch der Port angepasst werden, auf dem die Webseite laufen soll. Dieser muss mit dem Port in der Docker-Compose-Datei übereinstimmen.
+
+\begin{lstlisting}[language={JavaScript}, caption={Port Konfiguration für das Vue Projekt}]
+export default defineConfig({
+    ...
+    server: {
+    host: '0.0.0.0',
+    port: 3000,
+},
+});
+\end{lstlisting}
+
+Nach diesem Schritt ist das Projekt erfolgreich migriert und kann nun mit dem neuen Framework weiterentwickelt werden. Es ist auch möglich, alles über die Docker Compose Datei zu starten und zu stoppen.
+
 \section{Implementierung von Verbesserungen }
+
+% TODO: PWA Support hinzufügen zum Projekt erklären warum das wichtig ist
 
 \subsection{Umsetzung der Ergebnisse aus der Nutzerumfrage}
 

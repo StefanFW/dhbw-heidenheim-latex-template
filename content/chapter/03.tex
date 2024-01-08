@@ -132,11 +132,30 @@ Dadurch kann die Darstellung und Logik von zusammenhängenden Komponenten beiein
 
 Die Einführung von \acs{JSX} hat die Art und Weise, wie Webentwicklung betrieben wird, maßgeblich verändert, und sie spielt eine bedeutende Rolle in Frameworks wie ReactJS, Vue und anderen modernen Bibliotheken zur Entwicklung von Benutzeroberflächen. Diese Entwicklung hat dazu geführt, dass Entwickler:innen leistungsstarke, interaktive Webanwendungen schneller und effektiver erstellen können.\cite{react-jsx-explained}
 
+\subsection{JavaScript superset TypeScript}
+
+TypeScript ist eine von Microsoft entwickelte Programmiersprache, die eine typisierte Erweiterung von JavaScript darstellt. Es fügt statische Typen hinzu, was die Code-Qualität verbessert und Entwicklern ermöglicht, robustere und wartbarere Software zu erstellen. \cite{typescript}
+
+\subsubsection{Schlüsselmerkmale von TypeScript}
+
+\begin{enumerate}
+    \item \textbf{Statische Typisierung:} TypeScript fügt statische Typisierung hinzu, die es Entwicklern ermöglicht, Typen für Variablen, Parameter und Rückgabetypen von Funktionen festzulegen. Dies hilft, Fehler frühzeitig im Entwicklungsprozess zu erkennen.
+
+    \item \textbf{Verbesserte Code-Intelligenz:} Durch die Verwendung von TypeScript profitiert man von besserer Code-Intelligenz in Entwicklungsumgebungen, was die Produktivität steigert. Intelligente Autovervollständigung und detaillierte Fehlermeldungen sind einige der Vorteile.
+
+    \item \textbf{Interfaces und Typen:} TypeScript ermöglicht die Definition von benutzerdefinierten Typen und Schnittstellen, was zu einer klaren und strukturierten Codebasis führt. Dies erleichtert die Zusammenarbeit im Team und das Verständnis des Codes.
+
+    \item \textbf{ES6-Unterstützung:} TypeScript unterstützt ECMAScript 6 und darüber hinaus, was bedeutet, dass Entwickler die neuesten Funktionen von JavaScript nutzen können.
+
+    \item \textbf{Bessere Wartbarkeit und Skalierbarkeit:} Die Verwendung von Typen trägt dazu bei, Bugs zu reduzieren und die Wartbarkeit von Codebasen zu verbessern. Dies ist besonders wichtig für größere Projekte.
+\end{enumerate}
+
 \subsection{Komponentenarchitektur}
 
 % TODO: ausarbeiten
 
 \subsection{Frontend Frameworks}
+\label{chapter:3-frontend-frameworks}
 
 Die Frontend-Entwicklung spielt eine entscheidende Rolle bei der Gestaltung der Benutzeroberfläche und der Benutzerinteraktion, welche wiederum Hand in Hand mit der Nutzer Zentrierten Design eingeht. Es gibt verschiedene Frameworks, die Entwicklern helfen, leistungsstarke und ansprechende Benutzeroberflächen zu erstellen. Drei der prominentesten Frontend-Frameworks sind:
 
@@ -153,7 +172,6 @@ Die Frontend-Entwicklung spielt eine entscheidende Rolle bei der Gestaltung der 
 \end{itemize}
 
 % TODO: Tabelle mit den Frameworks und deren Eigenschaften, besser übersetzen und anpassen
-
 % ! Tabellen Format ist im Dokument ein wenig verschoben!!! das noch fixen
 
 \begin{longtable}{@{\extracolsep{\fill}}|c|c|c|c|@{}}
@@ -191,16 +209,11 @@ Die Frontend-Entwicklung spielt eine entscheidende Rolle bei der Gestaltung der 
 \end{longtable}
 
 % TODO: die Quellen vlt nochmal anschauen und ein besseres Fazit schließen können!!
-
 % TODO: das Fazit besser schreiben und die Quellen besser anschauen dabei vlt nochmal die Quellen von oben anschauen
 
 Diese Frameworks haben jeweils ihre eigenen Stärken und eignen sich für unterschiedliche Projekte je nach Anforderungen, Teampräferenzen und Zielen.\cite{angular-vuejs-reactjs-comparison:3, angular-vuejs-reactjs-comparison:4}
 
-Für die CO2-Runter-App wurde ReactJS als Frontend-Technologie ausgewählt, aufgrund seiner Flexibilität, Leistung und der großen Unterstützung durch die Entwickler-Community. ReactJS ermöglicht die Entwicklung einer reaktionsfähigen Benutzeroberfläche, die schnell und effizient auf Änderungen reagiert.
-
-Zusätzlich zur Verwendung von ReactJS könnte die Anwendung einer \acs{UI}-Bibliothek wie beispielsweise Material-UI oder Ant Design die Entwicklung beschleunigen. Diese Bibliotheken bieten vorgefertigte Komponenten und Stile, die nahtlos in ReactJS integriert werden können, um die Entwicklung zu vereinfachen und ein konsistentes Erscheinungsbild zu gewährleisten.
-
-Die Kombination von ReactJS mit einer solchen \acs{UI}-Bibliothek erleichtert die Implementierung von Designelementen und trägt zur konsistenten Gestaltung der Anwendung bei, während gleichzeitig die Entwicklungseffizienz verbessert wird.
+Die CO2-Runter-App wurde ursprünglich mit \textbf{ReactJS} entwickelt. Allerdings fiel die Entscheidung, das Framework zu wechseln, da die Entwickler mit \textbf{ReactJS} nicht zufrieden waren und auf diverse Probleme stießen. Als Alternative wurde \textbf{Vue} ausgewählt, da es eine leicht verständliche Lernkurve aufweist und die Entwickler bereits Erfahrung damit hatten. Zudem zeichnet sich \textbf{Vue} durch hohe Flexibilität aus und lässt sich gut mit anderen Bibliotheken und Frameworks kombinieren. Die Entscheidung für \textbf{Vue} wurde auch durch seine Performance und umfassende Dokumentation beeinflusst, was die Entwicklung erleichtert.
 
 \section{Werkzeuge}
 \label{chapter:3-werkzeuge}
@@ -216,7 +229,23 @@ Ein Paketmanager ist eine Software, die es ermöglicht, sogenannte Pakete herunt
 
 Für jeden Paketmanager gibt es eine Paketzentrale oder auch Registry genannt. In der Registry von \acs{NPM} sind über 800.000 Pakete/Projekte zu finden. \acs{NPM} ermöglicht außerdem, eine bestimmte Version eines Pakets in ein Projekt zu importieren. Diese Funktion erlaubt es einem Entwickler, selbst mit veralteten Versionen eines Projektes weiterzuarbeiten. \acs{NPM} ist nur einer von vielen Paketmanagern, die es gibt, dennoch hat sich \acs{NPM} im JavaScript-Umfeld als das Standardwerkzeug für die Paketverwaltung herausgebildet.\cite{npm}
 
-% TODO: weitere Packetmanager aufführen, Bun, PNPM, Yarn ?
+\subsection{Vite}
+
+Vite ist ein modernes Build-Tool, das speziell für die Entwicklung von Webanwendungen mit modernen Technologien wie Vue, React und TypeScript entwickelt wurde. Es wurde entworfen, um die Entwicklung zu beschleunigen, indem es schnelle Builds und eine effiziente Entwicklungsumgebung bereitstellt. \cite{vitejs}
+
+\subsubsection{Merkmale von Vite}
+
+\begin{enumerate}
+    \item \textbf{Schnelle Entwicklungsumgebung:} Vite bietet eine extrem schnelle Entwicklungszeit, indem es eine schnelle Startzeit und inkrementelle Builds ermöglicht. Dies erleichtert die Entwicklung und Tests während des Schreibens von Code.
+
+    \item \textbf{Effizientes HMR (Hot Module Replacement):} Mit HMR können Änderungen im Code sofort angewendet werden, ohne dass die gesamte Anwendung neu geladen werden muss. Dies beschleunigt den Entwicklungsprozess erheblich.
+
+    \item \textbf{Unterstützung für verschiedene Frameworks:} Vite unterstützt verschiedene Frontend-Frameworks wie Vue, React und sogar Vanilla JavaScript, was es flexibel für verschiedene Projekte macht.
+
+    \item \textbf{Eingebautes Dev-Server:} Der integrierte Entwicklungsserver von Vite bietet eine optimale Erfahrung während der Entwicklung, einschließlich Fehlermeldungen im Browser, automatischem Öffnen des Browsers und mehr.
+
+    \item \textbf{Effizientes Bundling:} Vite nutzt ESM (ECMAScript Module) und bietet ein effizientes Bundling für die Produktion, was zu kleinen und schnellen Build-Dateien führt.
+\end{enumerate}
 
 \subsection{Material UI (MUI)}
 \label{chapter:3-werkzeuge-mui}
