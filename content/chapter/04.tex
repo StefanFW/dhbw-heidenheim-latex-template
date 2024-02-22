@@ -1,54 +1,130 @@
 %!TEX root = ../../main.tex
 
-% TODO. ist das kapitel relevant überhaupt noch?
-
-\chapter{Identifikation und Beheben bestehender Probleme}
+\chapter{Anforderungen an die neue Software}
 \label{chapter:4}
 
-Bevor es ans eigentliche geht sollte im bestehenden System die Probleme identifiziert werden und lösungen auf diese gefunden werden bevor auf Neuerungen eingegangen werden!
+Zur Ermittlung der Anforderungen an die neue Webanwendung wurde im Rahmen eines Brainstormings bestehende und weitere Aspekte zusammengetragen, die in der alten Webanwendung nicht oder nur unzureichend umgesetzt wurden, aber auch Grundfunktionen welche die neue Webanwendung haben muss. Die Ergebnisse wurden anschließend in einer Liste zusammengefasst. Die insgesamt \textbf{9} Anforderungen wurden zusätzlich in folgende Kategorien, Muss-, Soll- und Kann-Anforderungen, eingeteilt.
 
-% TODO: die vlt einarbeiten oder sind die sachen schon drin ?
-% > Wo sind die Probleme  (mit react gefixed etc.-)
-% > Bugs fixen dann (dabei auf die Probleme eingehen) (Technische Probleme fixen)
+\begin{itemize}
+    \item \textbf{Muss-Anforderungen} beschreiben essentielle Anforderungen an die neue Webanwendung, die unbedingt erfüllt werden müssen. Bei diesen Anforderungen handelt es sich um Kernfunktionalitäten und wichtige Merkmale. Die Erfüllung dieser Anforderungen ist unerlässlich und stellt dadurch den Basisumfang der Software dar.
 
-% TODO: Die Fehler müssen uns zuerst gesagt werden etc --> dann erst analysieren und beheben
+    \item \textbf{Soll-Anforderungen} beschreiben Anforderungen, die für die neue Webanwendung wünschenswert, aber nicht zwingend notwendig sind. Bei diesen Anforderungen handelt es sich um Funktionalitäten, die den Basisumfang der \textbf{Muss-Anforderungen} der Software erweitern und einen relevanten Mehrwert bieten.
 
-% TODO: Die ganzen Probleme in einer Tabelle anzeigen, die kann man dann wiederum im Fazit referenzieren um zu schauen was behoben wurde und was nicht so gut gelöst wurde
+    \item \textbf{Kann-Anforderungen} beschreiben optionale Anforderungen an die neue Webanwendung, deren Erfüllung weitere Funktionalitäten ermöglicht, die aber von untergeordneter Bedeutung sind.
+\end{itemize}
 
-BI = Bug ID
+Im Folgenden werden die Anforderungen an die neue Webanwendung spezifiziert. Hierbei werden zunächst die funktionalen Anforderungen an die Webanwendung beschrieben, gefolgt von den nicht-funktionalen Anforderungen. Abschließend werden alle Anforderungen in Form eines tabellarischen Überblicks zusammengefasst. Die Begriffe \texttt{System}, \texttt{Software} und \texttt{Webanwendung} werden im Folgenden synonym verwendet, um über die zu entwickelnde Webanwendung zu sprechen. Jede Anforderung wird mit einer eindeutigen Id versehen, die sich aus dem Buchstaben \texttt{R} für \texttt{Requirement} und einer fortlaufenden Nummer zusammensetzt. Die Anforderungen werden in der Form \texttt{[RXX]} beschrieben, wobei \texttt{XX} für die fortlaufende Nummer steht.
 
-\section{Analyse und lösen bestehender Probleme}
+\section{Funktionale Anforderungen}
+\label{chapter:3-section:funktionale-anforderungen}
 
-\subsection{[BID1] Titel}
+Im Folgenden werden die funktionalen Anforderungen spezifiziert sowie die Service, die das System bereitstellen soll.
 
-\subsubsection{Erklärung}
+\subsection{Ereignisverarbeitung}
 
-\subsubsection{Lösung}
+\subsubsection{[R01] Abrufen der Bestandsdaten von der Datenbank}
 
-\subsection{[BIDX] ...}
+Es soll wie bisher möglich sein die Bestandsdaten von der verbundenen Datenbank abzurufen. - (Muss-Anforderung).
 
-\section{Übersicht der Probleme und Bugs}
+\subsubsection{[R02] Berechnung von CO2 Fußabdruck}
 
-\begin{longtable}{@{\extracolsep{\fill}}|c|c|c|c|@{}}
+Durch einen CO2 Rechner sollen die CO2 Daten berechnet werden können. Dieser sollte einfach zu bedienen sein, verständlich und gut durchdacht. - (Muss-Anforderung).
+
+\subsubsection{[R03] Hochladen von CO2 Daten}
+
+Der Benutzer soll die Möglichkeit haben, CO2 Daten hochzuladen, welcher er zuvor über die CO2 Rechner für seinen Individuellen Fall berechnet hat. - (Muss-Anforderung).
+
+\subsection{Systemfunktionen}
+
+\subsubsection{[R04] Homepage}
+
+Eine ansprechende Homepage für den Nutzer, der ihn dazu animiert die Webseite zu nutzen, soll erstellt werden. - (Muss-Anforderung).
+
+\subsubsection{[R05] Dashboard}
+
+Ein Dashboard, welches die wichtigsten Informationen auf einen Blick darstellt, soll erstellt werden. - (Muss-Anforderung).
+
+\subsection{CO2 Rechner}
+
+\subsubsection{[R06] Tipps und Tricks}
+
+Der CO2 Rechner soll dem Benutzer Tipps und Tricks geben, wie er seinen CO2 Fußabdruck reduzieren kann. - (Soll-Anforderung).
+
+\subsubsection{[R07] Durchgeleitet werden}
+
+Der Benutzer soll durch den CO2 Rechner durchgeleitet werden, um die CO2 Daten hochzuladen. - (Kann-Anforderung).
+
+\section{Nichtfunktionale Anforderungen}
+\label{chapter:3-section:nichtfunktionale-anforderungen}
+
+Die nachfolgenden, nicht-funktionalen Anforderungen beschreiben Einschränkungen und Qualitätsmerkmale, die für die Entwicklung und den Betrieb des Systems gelten.
+
+\subsection{[R08] Benutzerfreundlichkeit}
+
+Die neue CO2-Webanwendung soll eine hohe Benutzerfreundlichkeit aufweisen um mehr Nutzer zu erreichen, als auch die Nutzerfreundlichkeit zu erhöhen. - (Muss-Anforderung).
+
+\subsection{[R09] Zuverlässigkeit}
+
+Wie jedes System soll auch dieses System die Zuverlässigkeit gewährleisten. Hierbei wird einerseits auf die Zuverlässigkeit der Software selbst geachtet, andererseits aber auch auf die Zuverlässigkeit der Infrastruktur, auf der das System betrieben wird. - (Muss-Anforderung).
+
+\subsection{[R10] Wartbarkeit und Erweiterbarkeit}
+
+Gerade dieser Punkt ist besonders wichtig, den durch Dokumentation und Ordentliche Struktur des Codes, kann das System in Zukunft gewartet und erweitert werden ohne großen Aufwand. - (Muss-Anforderung).
+
+\subsection{[R11] Code Qualität und Styleguide einhaltung}
+
+Um gerade auch die Wartbarkeit auch in Zukunft zu gewährleisten, ist es wichtig, dass der Code sauber und gut strukturiert ist. - (Muss-Anforderung).
+
+\section{Übersicht der Anforderungen}
+\label{chapter:3-section:uebersicht-anforderungen}
+
+Im Folgenden ist eine Tabelle, welche die funktionalen (f) und nicht-funktionalen (nf) Anforderungen aus den vorherigen Abschnitten (\hyperref[chapter:3-section:funktionale-anforderungen]{3.1}, \hyperref[chapter:3-section:nichtfunktionale-anforderungen]{3.2}), übersichtlich in Muss-, Soll- und Kann-Anforderungen gruppiert und jeweils priorisiert anhand der Reihenfolge. Darüber hinaus hat jede Anforderung einen Verweis auf das Kapitel, in dem das Konzept und die Implementierung beschrieben sind.
+
+\begin{longtable}{|c|l|c|c|}
+
     \hline
-    \multicolumn{1}{|c|}{\textbf{ID}}       &
-    \multicolumn{1}{c|}{\textbf{Title}}     &
-    \multicolumn{1}{c|}{\textbf{Erklärung}} &
-    \multicolumn{1}{c|}{\textbf{Lösung}}                                                   \\ \hline
+    \textbf{ID}          &
+    \textbf{Anforderung} &
+    \textbf{Art}         &
+    \textbf{Impl.}                                                                \\ \hline
     \endfirsthead
+
     \hline
-    \multicolumn{1}{|c|}{\textbf{ID}}       &
-    \multicolumn{1}{c|}{\textbf{Titel}}     &
-    \multicolumn{1}{c|}{\textbf{Erklärung}} &
-    \multicolumn{1}{c|}{\textbf{Lösung}}                                                   \\ \hline
+    \textbf{ID}          &
+    \textbf{Anforderung} &
+    \textbf{Art}         &
+    \textbf{Impl.}                                                                \\ \hline
     \endhead
 
     \hline
-    \multicolumn{4}{|r|}{{Die Fortsetzung erfolgt auf der nachfolgenden Seite}}            \\ \hline
+    \multicolumn{4}{|r|}{{Die Fortsetzung erfolgt auf der nachfolgenden Seite}}   \\ \hline
     \endfoot
 
     \endlastfoot
-    BI1                                     & Titel & Erklärungs Kapitel & Lösungs Kapitel \\ \hline
-    \caption{Tabelle mit all den Problemen und Bugs}
+
+    \multicolumn{4}{|c|}{\textbf{Muss-Anforderungen}}                             \\ \hline
+
+    R01                  & Abrufen der Bestandsdaten von der Datenbank & f  & 6.X \\ \hline
+    R02                  & Berechnung von CO2 Fußabdruck               & f  & 6.X \\ \hline
+    R03                  & Hochladen von CO2 Daten                     & f  & 6.X \\ \hline
+    R04                  & Homepage                                    & f  & 6.X \\ \hline
+    R05                  & Dashboard                                   & f  & 6.X \\ \hline
+    R07                  & Benutzerfreundlichkeit                      & nf & 6.X \\ \hline
+    R08                  & Zuverlässigkeit                             & nf & 6.X \\ \hline
+    R09                  & Wartbarkeit und Erweiterbarkeit             & nf & 6.X \\ \hline
+    R10                  & Code Qualität und Styleguide einhaltung     & nf & 6.X \\ \hline
+
+    \multicolumn{4}{|c|}{\textbf{Soll-Anforderungen}}                             \\ \hline
+
+    R06                  & Tipps und Tricks                            & f  & 6.X \\ \hline
+
+    \multicolumn{4}{|c|}{\textbf{Kann-Anforderungen}}                             \\ \hline
+
+    R07                  & Durchgeleitet werden                        & f  & 6.X \\ \hline
+    \caption{Übersicht der funktionalen und nicht-funktionalen Anforderungen}
     \\
 \end{longtable}
+
+% Überleitung ins nächste Kapitel
+
+Mit diesen Anforderungen als Grundlage kann im folgenden Kapitel die Implementierung der Webanwendung und der hier beschriebenen Anforderungen umgesetzt werden.
