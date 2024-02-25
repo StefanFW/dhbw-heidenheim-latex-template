@@ -3,11 +3,9 @@
 \chapter{Implementierung und Verbesserung der Webseite}
 \label{chapter:6}
 
-% TODO: die vlt einarbeiten oder sind die sachen schon drin ?
-% > Dann die neuen Features einbauen (Probleme wurden ja gefixed) (Darauf aufbauen dann die UI darauf aufbauen)
-% > evlt. weitere Features einbauen (Weitere Userzentrierte Features ausbauen)
+In den vorherigen Kapiteln wurde zunächst die bisherige Webseite analysiert, um ihre Stärken und Schwächen zu identifizieren. Anschließend wurde eine Nutzerumfrage durchgeführt, um die Zufriedenheit der Nutzer mit der Webseite zu ermitteln. Darauf aufbauend wurden aus den Ergebnissen der Nutzerumfrage Personas erstellt und Anforderungen abgeleitet. Diese Anforderungen wurden im \hyperref[chapter:5]{Kapitel 5} spezifiziert und in die Kategorien Muss-, Soll- und Kann-Anforderungen eingeteilt.
 
-In den vorherigen Kapiteln wurde die Webseite analysiert und die Nutzerumfrage wurde durchgeführt und ausgewertet. Diese Erkenntnisse sollen nun genutzt werden, um eine bessere Version der Webseite zu entwickeln. Bevor das jedoch geschehen kann, muss die bisherige Codebasis auf ein anderes Frontend-Framework migriert werden, da die Zufriedenheit mit dem bisherigen Framework nicht sehr hoch war. Nach der Migration werden dennoch die Ergebnisse der Nutzerumfrage genutzt, um die Webseite zu verbessern. Dabei wird auf die Ergebnisse der Nutzerumfrage eingegangen, und die Webseite wird so angepasst, dass die Nutzererfahrung verbessert wird. Außerdem werden neue Features und Funktionen hinzugefügt, die die Nutzererfahrung verbessern und die Nutzer dazu anregen sollen, die Webseite zu nutzen.
+Diese Erkenntnisse sollen nun genutzt werden, um eine verbesserte Version der Webseite zu entwickeln. Bevor dies geschehen kann, muss jedoch die bisherige Codebasis auf ein neues Frontend-Framework migriert werden, da die Zufriedenheit mit dem vorherigen Framework nicht sehr hoch war. Nach der Migration werden trotzdem die Ergebnisse der Nutzerumfrage genutzt, um die Webseite zu optimieren. Dabei wird auf die Ergebnisse der Umfrage eingegangen, und die Webseite wird entsprechend angepasst, um die Nutzererfahrung zu verbessern. Außerdem werden neue Features und Funktionen hinzugefügt, die die Nutzererfahrung bereichern und die Nutzer dazu anregen sollen, die Webseite vermehrt zu nutzen.
 
 \section{Frameworkwechsel und Verbesserungen}
 
@@ -89,7 +87,7 @@ export default defineConfig({
 
 Nach diesem Schritt ist das Projekt erfolgreich migriert und kann nun mit dem neuen Framework weiterentwickelt werden. Es ist auch möglich, alles über die Docker Compose Datei zu starten und zu stoppen.
 
-\section{Unterstützung von PWA}
+\section{Unterstützung von PWA für Mobile Nutzer}
 
 Zu Beginn dieser Arbeit wurde im \hyperref[chapter:2]{Kapitel 2} erwähnt, dass die Webseite trotz ihrer Web-basierten Natur als "App" bezeichnet wird. Um die Nutzererfahrung zu optimieren und die Benutzerfreundlichkeit der Webseite zu erhöhen, wird die Integration von \acf{PWA} angestrebt. Eine \acs{PWA} ist eine Technologie, die es ermöglicht, Webseiten ähnlich wie native Mobile Apps zu nutzen. Dies bedeutet, dass die Webseite auch offline zugänglich ist und auf dem Startbildschirm eines Smartphones installiert werden kann. Dadurch wird die Interaktion mit der Webseite komfortabler und die Nutzererfahrung insgesamt verbessert. \cite{ms-pwa}
 
@@ -242,16 +240,16 @@ const install = () => {
 
 Die Integration dieser Komponente in die \texttt{App.vue}-Datei ist unkompliziert und wird dem Nutzer angezeigt, wenn die Webseite als \acs{PWA} installiert werden kann. Dadurch wird die Nutzererfahrung verbessert und die Webseite kann auch offline genutzt werden, ähnlich wie eine native App. \cite{vite-plugin-pwa}
 
-\section{Projekt aufräumen und Verbesserungen}
+\section{Projekt aufräumen und Strukturierung}
 
-\section{Implementierung von Verbesserungen }
+Bisher wurden essentielle veränderungen an dem Framework gemacht, bevor es weitergeht, muss das Projekt aufgeräumt und strukturiert werden. Dies beinhaltet das Entfernen von ungenutzten Dateien und das Umbenennen von Dateien, um eine konsistente Namenskonvention zu gewährleisten. Außerdem müssen die Ordnerstruktur und die Dateistruktur überarbeitet werden, um eine bessere Übersichtlichkeit und Wartbarkeit des Projekts zu gewährleisten. Dies beinhaltet das Erstellen von Ordnern für Komponenten, Seiten, Services und anderen wichtigen Dateien. Die Ordnerstruktur könnte wie folgt aussehen:
 
-\subsection{Umsetzung der Ergebnisse aus der Nutzerumfrage}
+\section{Erstellung der neuen Landing Page}
 
-\subsection{Integration neuer Features und Funktionen}
+Die Landing Page ist die erste Seite, die der Nutzer sieht, wenn er die Webseite besucht. Sie ist somit das Aushängeschild der Webseite und sollte den Nutzer dazu animieren, die Webseite zu nutzen. Die Landing Page sollte also ansprechend und informativ sein, um den Nutzer zu überzeugen, die Webseite zu nutzen. Die neue Landing Page wird mit \textbf{Vuetify} erstellt, einem Material Design Framework für Vue.js. Vuetify bietet viele vorgefertigte Komponenten, die es ermöglichen, schnell und einfach ansprechende Webseiten zu erstellen. Die Landing Page könnte wie folgt aussehen:
 
-\section{Erweiterung der Nutzererfahrung}
+\section{Der neue CO2 Rechner}
 
-\subsection{Interaktive Landing Page und benutzerfreundliche UI-Gestaltung}
+\section{Das neue Dashboard}
 
-\subsection{Anreize zur Aktivität und Engagement der Nutzer}
+\section{Anreize zur Aktivität und Engagement der Nutzer}
