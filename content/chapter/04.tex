@@ -1,5 +1,5 @@
 %!TEX root = ../../main.tex
-
+\usepackage{mdframed}
 \chapter{Nutzerzentrierte Umfrage}
 \label{chapter:4}
 
@@ -212,7 +212,7 @@ Sollten die Rückmeldungen nicht innerhalb von Tabellen einfach dargestellt werd
 Beim ersten Frageabschnitts handelt es sich um den CO2-Fußabdruck.
 Innerhalb des Abschnitts wurden fünf Fragen gestellt, die den allgemeinen Wissensstand der Teilnehmer rund um den CO2-Fußabdruck abzufragen.
 Vier der fünf Fragen waren sogenannte Ja/Nein-Fragen.
-Die Ergebnisse sowie die genau Fragestellung sind in Tabelle XYZ aufgelistet: \newline
+Die Ergebnisse sowie die genau Fragestellung sind in Tabelle \ref{co2fußabdruckfragen} aufgelistet: \newline
 
 \begin{longtable}{@{\extracolsep{\fill}}|l|c|r|@{}}
     \hline
@@ -226,13 +226,86 @@ Die Ergebnisse sowie die genau Fragestellung sind in Tabelle XYZ aufgelistet: \n
     Haben Sie ihren CO2-Fußabdruck schon einmal berechnet/berechnen lassen?     & 58,2\%     & 41,8\%           \\ \hline
     Kennen Sie den Klima-Buddy und haben Sie diesen evtl. schon benutzt?        & 6,0\%      & 94,0\%           \\ \hline
     \caption{Ja/Nein-Fragen aus dem Frageabschnitt CO2-Fußabdruck}
+    \label{co2fußabdruckfragen}
     \\
 \end{longtable}
-Des Weiteren wurde innerhalb des ersten Abschnittes noch die Frage gestellt, wie bewusst sich die Teilnehmer im Allgemeinen über ihren CO2-Fußabdruck sind.
-Als Antwortmöglichkeiten hab es die Zahlen \textit{1} (kein Bewusstsein) bis \textit{5} (volles Bewusstsein).
+Des Weiteren die Frage gestellt, wie bewusst sich die Teilnehmer im Allgemeinen über ihren CO2-Fußabdruck sind.
+Als Antwortmöglichkeiten gab es die Zahlen \textit{1} (kein Bewusstsein) bis \textit{5} (volles Bewusstsein).
 Insgesamt befinden sich 86,5\% der Befragten im Zahlenraum 2-4.
 Lediglich drei der befragten Personen behaupten, vollstes Bewusstsein über ihren CO2-Fußabdruck zu haben.
 Auf der anderen Seite besitzen sechs Personen unter den 67 Teilnehmer gar kein Bewusstsein über ihren Fußabdruck.
+
+Im nächsten Frageabschnitt wurde thematisiert, aus welcher Motivation die Teilnehmer die CO2tuner-Webseite benutzen würden.
+Insgesamt wurden den Befragten in diesem Abschnitt zehn Fragen gestellt, wovon eine optional war.
+Bei vier der neun Pflichtfragen handelt es sich erneut um Ja/Nein/-Fragen, die aber eine weitere neutral bzw. unschlüssige Antwortmöglichkeit ermöglichen.
+Diese sind mit deren Antwortverteilungen in Tabelle \ref{motivationFragen}aufgelistet:
+\begin{longtable}{@{\extracolsep{\fill}}|l|l|l|l@{}}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Fragestellung}} &
+    \multicolumn{1}{c|}{\textbf{Ja}} &
+    \multicolumn{1}{c|}{\textbf{Nein}} &
+    \multicolumn{1}{r|}{\textbf{Neutral}} \\ \hline
+    \endfirsthead
+
+    Sind Sie bereits aktiv dabei, unser Klima zu schützen?& 61,2\% & 38,8\% & -       \\ \hline
+    Motiviert es Sie, wenn Sie ihren Fußabdruck mit\\ anderen Nutzern vergleichen können?& 56,7\% & 25,4\% & 17,9\%  \\ \hline
+    Würde ihnen ein Punktesystem helfen, ihren\\ CO2-Fußabdruck häufiger zu berechnen?& 59,7\% & 19,4\% & 20,9\%  \\ \hline
+    Würden Sie ihren Fortschritt bzw. ihren CO2-Fußabdruck\\ gerne mit anderen Leuten teilen können?& 26,9\% & 26,9\% & 46,3\%  \\ \hline
+    \caption{Ja/Nein-Fragen aus dem Frageabschnitt Motivation}
+    \label{motivationFragen}
+    \\
+\end{longtable}
+Zusätzlich wurde die folgenden fünf Multiple-Choice-Fragen innerhalb des Motivationsabschnitts gestellt:
+\begin{mdframed}
+\end{mdframed}
+\begin{itemize}
+    \item Warum würden Sie die CO2-Runter Webseite nutzen?
+    \begin{itemize}
+        \item aus Interesse (43,4\%)
+        \item um mir meinen aktuellen CO2-Fußabdruck berechnen zu lassen (58,2\%)
+        \item um Tipps zum Thema Klimaschutz zu erhalten (28,4\%)
+        \item aus Neugier (52,2\%)
+        \item durch Arbeitskollegen (1,5\%)
+    \end{itemize}
+    \item Was erhoffen Sie sich von einer Webseite, welche den Klimaschutz unterstützt?
+    \begin{itemize}
+        \item Aufklärung über den Klimaschutz und den CO2-Fußabdruck (71,6\%)
+        \item Tipps, wie ich mein Verhalten zum Schutz unseres Klimas verbessere (73,1\%)
+        \item Keinen Vorteil (10,4\%)
+        \item Sonstige (3\%)
+    \end{itemize}
+    \item Welche Möglichkeiten müsste eine Webseite ihnen bieten, um unser Klima (noch) aktiver zu schützen?
+    \begin{itemize}
+        \item Mehr Tipps, wie ich das Klima schützen kann (38,8\%)
+        \item Aufklärung, damit ich sehe wie ich dem Klima schade (61,2\%)
+        \item Verlinkung zu KLimaschutzgruppierungen (10,4\%)
+        \item Tipps, um den Klimaschutz in den Alltag zu integrieren (80,6\%)
+        \item Sonstiges (4,5\%)
+    \end{itemize}
+    \item Welche Anreize könnten Sie dazu motivieren, die Webseite häufiger zu verwenden?
+    \begin{itemize}
+        \item Belohnungen (56,7\%)
+        \item Wettbewerbe (25,4\%)
+        \item soziale Interaktion (23,9\%)
+        \item Vergleiche mit anderen (46,3\%)
+        \item Kein (3\%)
+        \item Sonstiges (6\%)
+    \end{itemize}
+    \item Welche Komzepte finden Sie sinnvoll für eine Webseite, um klimafreundliches Verhalten zu fördern?
+    \begin{itemize}
+        \item Gamifizierung (59,4\%)
+        \item Soziale Interaktion (31,3\%)
+        \item Persönliche Herausforderungen (54,7\%)
+        \item Bildung und Bewusstseinsbildung (35,9\%)
+        \item Belohnungssystem (53,1\%)
+        \item Wettbewerbe (20,3\%)
+    \end{itemize}
+\end{itemize}
+
+Bei der optionalen Frage wurden die Teilnehmer gebeten, eigene Ideen und Anregungen zu nennen, die sie haben, um klimafreundlicheres Verhalten erzeugen oder unterstützen zu können.
+Insgesamt haben neun Personen auf die optionale Frage geantwortet.
+
+Der nächste Abschnitt der Umfrage hat sich mit dem Thema Nutzerfreundlichkeit beschäftigt.
 \subsection{Erstellung von Personas anhand der Umfrageergebnisse}
 
 Um die Bedürfnisse und Anforderungen der Nutzer besser zu verstehen, haben wir die Ergebnisse unserer Umfrage analysiert und Personas erstellt, die typische Nutzergruppen repräsentieren. Dafür ist es typischerweise möglich diese durch Clustering und andere Methoden zu erstellen. In unserem Fall haben wir uns auf die Analyse der Umfrageergebnisse konzentriert und die Personas basierend auf den Ergebnissen erstellt, weil die Teilnehmeranzahl der Umfrage zu gering war, um eine Clusteranalyse durchzuführen.
