@@ -3,7 +3,7 @@
 \chapter{Anforderungen an die neue Software}
 \label{chapter:5}
 
-Zur Ermittlung der Anforderungen an die neue Webanwendung wurde im Rahmen eines Brainstormings bestehende und weitere Aspekte zusammengetragen, die in der alten Webanwendung nicht oder nur unzureichend umgesetzt wurden, aber auch Grundfunktionen welche die neue Webanwendung haben muss. Die Ergebnisse wurden anschließend in einer Liste zusammengefasst. Die insgesamt \textbf{9} Anforderungen wurden zusätzlich in folgende Kategorien, Muss-, Soll- und Kann-Anforderungen, eingeteilt.
+Zur Ermittlung der Anforderungen an die neue Webanwendung wurde im Rahmen eines Brainstormings bestehende und weitere Aspekte zusammengetragen, die in der alten Webanwendung nicht oder nur unzureichend umgesetzt wurden, aber auch Grundfunktionen welche die neue Webanwendung haben muss. Die Ergebnisse wurden anschließend in einer Liste zusammengefasst. Die insgesamt \textbf{16} Anforderungen wurden zusätzlich in folgende Kategorien, Muss-, Soll- und Kann-Anforderungen, eingeteilt.
 
 \begin{itemize}
     \item \textbf{Muss-Anforderungen} beschreiben essentielle Anforderungen an die neue Webanwendung, die unbedingt erfüllt werden müssen. Bei diesen Anforderungen handelt es sich um Kernfunktionalitäten und wichtige Merkmale. Die Erfüllung dieser Anforderungen ist unerlässlich und stellt dadurch den Basisumfang der Software dar.
@@ -24,56 +24,76 @@ Im Folgenden werden die funktionalen Anforderungen spezifiziert sowie die Servic
 
 \subsubsection{[R01] Abrufen der Bestandsdaten von der Datenbank}
 
-Es soll wie bisher möglich sein die Bestandsdaten von der verbundenen Datenbank abzurufen. - (Muss-Anforderung).
+Die neue Webanwendung soll genauso in der Lage sein, Bestandsdaten aus der Datenbank abzureufen, um diese für die weitere Verarbeitung innerhalb der Webanwendung zu nutzen. Das beinhalted das Abfrage der Informationen aus der Datenbank ohne zwischenfälle und schwierigkeiten. Deshalb muss das Abrufen der Daten zuverlässig und sicher sein und die aktuellen Daten korrekt und vollständig geladen werden. - (Muss-Anforderung).
 
 \subsubsection{[R02] Berechnung von CO2 Fußabdruck}
 
-Durch einen CO2 Rechner sollen die CO2 Daten berechnet werden können. Dieser sollte einfach zu bedienen sein, verständlich und gut durchdacht. - (Muss-Anforderung).
+Der CO2-Rechner muss in der Lage sein, die eingegebenen Daten des Benutzers zu verarbeiten und den entsprechenden CO2-Fußabdruck zu berechnen. Dabei sollte der Rechner benutzerfreundlich gestaltet sein, leicht verständlich und logisch aufgebaut sein, um dem Benutzer ein angenehmes Erlebnis zu bieten. Die Berechnungen müssen genau sein und auf relevanten wissenschaftlichen Grundlagen basieren. - (Muss-Anforderung).
 
 \subsubsection{[R03] Hochladen von CO2 Daten}
 
-Der Benutzer soll die Möglichkeit haben, CO2 Daten hochzuladen, welcher er zuvor über die CO2 Rechner für seinen Individuellen Fall berechnet hat. - (Muss-Anforderung).
+Benutzer müssen die Möglichkeit haben, die berechneten CO2-Daten hochzuladen, um sie für ihre individuellen Fälle zu speichern und später darauf zugreifen zu können. Das Hochladen der Daten sollte einfach und intuitiv sein, um dem Benutzer eine reibungslose Erfahrung zu bieten. - (Muss-Anforderung).
 
 \subsection{Systemfunktionen}
 
 \subsubsection{[R04] Homepage}
 
-Eine ansprechende Homepage für den Nutzer, der ihn dazu animiert die Webseite zu nutzen, soll erstellt werden. - (Muss-Anforderung).
+Die Homepage der Webanwendung muss ansprechend gestaltet sein und den Benutzer dazu animieren, sich über seinen CO2-Fußabdruck zu informieren und aktiv zu werden, um diesen zu reduzieren. Neben einer ästhetischen Gestaltung sollten auf der Homepage auch hilfreiche Tipps, Informationsquellen und Verbesserungsvorschläge präsentiert werden, um den Benutzer zu unterstützen. - (Muss-Anforderung).
 
 \subsubsection{[R05] Dashboard}
 
-Ein Dashboard, welches die wichtigsten Informationen auf einen Blick darstellt, soll erstellt werden. - (Muss-Anforderung).
+Ein Dashboard soll wichtige Informationen zum CO2-Fußabdruck auf einen Blick darstellen. Dabei sollen relevante Kennzahlen, Grafiken und Vergleiche präsentiert werden, um dem Benutzer eine schnelle und übersichtliche Einsicht in seinen aktuellen CO2-Verbrauch zu ermöglichen. - (Muss-Anforderung).
 
 \subsection{CO2 Rechner}
 
-\subsubsection{[R06] Tipps und Tricks}
+\subsubsection{[R06] Tipps und Tricks zur Reduktion des CO2-Fußabdrucks}
 
-Der CO2 Rechner soll dem Benutzer Tipps und Tricks geben, wie er seinen CO2 Fußabdruck reduzieren kann. - (Soll-Anforderung).
+Der CO2-Rechner soll dem Benutzer Tipps und Tricks zur Reduktion seines CO2-Fußabdrucks geben, basierend auf den eingegebenen Daten. Diese Empfehlungen sollen dem Benutzer praktische Anleitungen bieten, wie er seinen Lebensstil anpassen kann, um seinen ökologischen Fußabdruck zu verringern. - (Soll-Anforderung).
 
-\subsubsection{[R07] Durchgeleitet werden}
+\subsubsection{[R07] Durchführung des CO2-Rechner-Workflows}
 
-Der Benutzer soll durch den CO2 Rechner durchgeleitet werden, um die CO2 Daten hochzuladen. - (Kann-Anforderung).
+Der Benutzer soll durch den CO2-Rechner geleitet werden, um die CO2-Daten hochzuladen und zu speichern. Dabei soll der Workflow klar strukturiert sein und dem Benutzer schrittweise Anleitungen bieten, um die erforderlichen Informationen korrekt einzugeben und den Prozess reibungslos abzuschließen. - (Kann-Anforderung).
+
+\subsubsection{[R08] Integration von Grafiken}
+
+Die Integration von ansprechenden Stockphotos und Grafiken auf der Webseite soll die Benutzererfahrung verbessern und die Inhalte visuell ansprechender gestalten. Durch die Verwendung von hochwertigen Bildern können komplexe Konzepte einfacher vermittelt und die Aufmerksamkeit der Benutzer besser auf bestimmte Inhalte gelenkt werden. - (Kann-Anforderung).
+
+\subsubsection{[R09] Visualisierung und Vergleich des CO2-Fußabdrucks}
+
+Das System soll das Ergebnis des CO2-Fußabdrucks mit relevanten Vergleichsdaten visualisieren und vergleichen, um dem Benutzer eine sinnvolle Perspektive zu bieten. Grafische Darstellungen und Vergleichsdiagramme können dem Benutzer dabei helfen, seinen CO2-Verbrauch besser zu verstehen und geeignete Maßnahmen zur Reduzierung zu identifizieren. - (Kann-Anforderung).
+
+\subsubsection{[R10] Modernisierung des Designs}
+
+Die Homepage und der CO2-Rechner sollen ein modernes Design erhalten, das die Benutzererfahrung verbessert und wichtige Informationen hervorhebt. Durch eine klare visuelle Gestaltung und die gezielte Platzierung relevanter Inhalte kann die Benutzerführung optimiert und die Nutzung der Webanwendung erleichtert werden. - (Muss-Anforderung).
+
+\subsubsection{[R11] Anzeige von weiteren Quellen/Infos im CO2 Rechner}
+
+Zusätzliche Quellen und Informationen sollen im CO2-Rechner sowie auf einer separaten Seite angezeigt werden, um dem Benutzer weitere Einsichten zu ermöglichen und sein Verständnis für das Thema zu vertiefen. Durch die Bereitstellung von weiterführenden Informationen kann der Benutzer sein Wissen erweitern und gezieltere Maßnahmen - (Soll-Anforderung).
 
 \section{Nichtfunktionale Anforderungen}
 \label{chapter:3-section:nichtfunktionale-anforderungen}
 
 Die nachfolgenden, nicht-funktionalen Anforderungen beschreiben Einschränkungen und Qualitätsmerkmale, die für die Entwicklung und den Betrieb des Systems gelten.
 
-\subsection{[R08] Benutzerfreundlichkeit}
+\subsection{[R12] Benutzerfreundlichkeit}
 
-Die neue CO2-Webanwendung soll eine hohe Benutzerfreundlichkeit aufweisen um mehr Nutzer zu erreichen, als auch die Nutzerfreundlichkeit zu erhöhen. - (Muss-Anforderung).
+Die neue CO2-Webanwendung muss eine hohe Benutzerfreundlichkeit aufweisen, um eine breite Nutzerbasis anzusprechen und die Nutzererfahrung zu verbessern im vergleich zur alten Webseite. Dafür sollte die Benutzeroberfläche modernisiert werden und dennoch viele Wichtige Informationen für den Nutzer bereitstellen. Durch eine benutzerzentrierte Gestaltung soll das Interesse der Nutzer geweckt und ihre Motivation gesteigert werden, sich aktiv mit ihrem CO2-Fußabdruck auseinanderzusetzen. Dafür sollen Personas angwendet werden um die passenden Nutzer anzusprechen und ihnen das bieten was sie sich erwünschen. - (Muss-Anforderung).
 
-\subsection{[R09] Zuverlässigkeit}
+\subsection{[R13] Modernes Design}
 
-Wie jedes System soll auch dieses System die Zuverlässigkeit gewährleisten. Hierbei wird einerseits auf die Zuverlässigkeit der Software selbst geachtet, andererseits aber auch auf die Zuverlässigkeit der Infrastruktur, auf der das System betrieben wird. - (Muss-Anforderung).
+Bei der Webanwendung wird versucht interessierte Nutzer durch ein Modernes und attraktives Design anzusprechen. Daurch soll die Benutzererfahrung verbessert und die Interaktion mit der Seite gefördert werden. Durch die Integration von hochwertigen Bildern und Eyecatchern wird die visuelle Attraktivität der Webseite erhöht und das Interesse der Benutzer geweckt Ein ästhetisches Design trägt dazu bei, das Markenimage zu stärken und das Vertrauen der Benutzer in die Webanwendung zu stärken. - (Muss-Anforderung).
 
-\subsection{[R10] Wartbarkeit und Erweiterbarkeit}
+\subsection{[R14] Zuverlässigkeit}
 
-Gerade dieser Punkt ist besonders wichtig, den durch Dokumentation und Ordentliche Struktur des Codes, kann das System in Zukunft gewartet und erweitert werden ohne großen Aufwand. - (Muss-Anforderung).
+Eine moderne Webanwendung sollte eine hohe Verfügbarkeit aufweisen und den Benutzern eine reibungslose Nutzung ermöglichen. Durch die Verwendung von zuverlässigen Technologien und die Einhaltung bewährter Entwicklungspraktiken soll die Stabilität und Leistungsfähigkeit des Systems sichergestellt werden. - (Muss-Anforderung).
 
-\subsection{[R11] Code Qualität und Styleguide einhaltung}
+\subsection{[R15] Wartbarkeit und Erweiterbarkeit}
 
-Um gerade auch die Wartbarkeit auch in Zukunft zu gewährleisten, ist es wichtig, dass der Code sauber und gut strukturiert ist. - (Muss-Anforderung).
+Die Wartbarkeit und Erweiterbarkeit des Systems ist ein wichtiger Aspekt für die langfristige Entwicklung und Pflege der Webanwendung. Durch eine klare und strukturierte Codierung sowie die Einhaltung von bewährten Entwicklungspraktiken wird die Wartbarkeit des Systems verbessert. Eine umfassende Dokumentation und die Einhaltung eines Styleguides erleichtern zudem die Zusammenarbeit im Entwicklerteam und ermöglichen es, das System effizient zu erweitern und anzupassen. - (Muss-Anforderung).
+
+\subsection{[R16] Code Qualität und Styleguide Einhaltung}
+
+Die Qualität des Codes einer Software ist essentielle und sorgt für die Stabilität, Sicherheit und Skalierbarkeit des Systems. Um dies zu erreichen ist das einhalten von festgelegten Coding-Standards und Best Practices notwendig. Durch die Einhaltung von festgelegten Coding-Standards und Best Practices wird sichergestellt, dass der Code lesbar, wartbar und fehlerfrei ist. Einheitliche Namenskonventionen, Kommentare und eine konsistente Codeformatierung erleichtern die Zusammenarbeit im Entwicklerteam und tragen zur langfristigen Qualitätssicherung des Systems bei. - (Muss-Anforderung).
 
 \section{Übersicht der Anforderungen}
 \label{chapter:3-section:uebersicht-anforderungen}
@@ -86,41 +106,46 @@ Im Folgenden ist eine Tabelle, welche die funktionalen (f) und nicht-funktionale
     \textbf{ID}          &
     \textbf{Anforderung} &
     \textbf{Art}         &
-    \textbf{Impl.}                                                                \\ \hline
+    \textbf{Impl.}                                                                       \\ \hline
     \endfirsthead
 
     \hline
     \textbf{ID}          &
     \textbf{Anforderung} &
     \textbf{Art}         &
-    \textbf{Impl.}                                                                \\ \hline
+    \textbf{Impl.}                                                                       \\ \hline
     \endhead
 
     \hline
-    \multicolumn{4}{|r|}{{Die Fortsetzung erfolgt auf der nachfolgenden Seite}}   \\ \hline
+    \multicolumn{4}{|r|}{{Die Fortsetzung erfolgt auf der nachfolgenden Seite}}          \\ \hline
     \endfoot
 
     \endlastfoot
 
-    \multicolumn{4}{|c|}{\textbf{Muss-Anforderungen}}                             \\ \hline
+    \multicolumn{4}{|c|}{\textbf{Muss-Anforderungen}}                                    \\ \hline
 
-    R01                  & Abrufen der Bestandsdaten von der Datenbank & f  & 6.X \\ \hline
-    R02                  & Berechnung von CO2 Fußabdruck               & f  & 6.X \\ \hline
-    R03                  & Hochladen von CO2 Daten                     & f  & 6.X \\ \hline
-    R04                  & Homepage                                    & f  & 6.X \\ \hline
-    R05                  & Dashboard                                   & f  & 6.X \\ \hline
-    R07                  & Benutzerfreundlichkeit                      & nf & 6.X \\ \hline
-    R08                  & Zuverlässigkeit                             & nf & 6.X \\ \hline
-    R09                  & Wartbarkeit und Erweiterbarkeit             & nf & 6.X \\ \hline
-    R10                  & Code Qualität und Styleguide einhaltung     & nf & 6.X \\ \hline
+    R01                  & Abrufen der Bestandsdaten von der Datenbank        & f  & 6.X \\ \hline
+    R02                  & Berechnung von CO2 Fußabdruck                      & f  & 6.X \\ \hline
+    R03                  & Hochladen von CO2 Daten                            & f  & 6.X \\ \hline
+    R04                  & Homepage                                           & f  & 6.X \\ \hline
+    R05                  & Dashboard                                          & f  & 6.X \\ \hline
+    R10                  & Modernisierung des Designs                         & f  & 6.X \\ \hline
+    R12                  & Benutzerfreundlichkeit                             & nf & 6.X \\ \hline
+    R13                  & Modernes Design                                    & nf & 6.X \\ \hline
+    R14                  & Zuverlässigkeit                                    & nf & 6.X \\ \hline
+    R15                  & Wartbarkeit und Erweiterbarkeit                    & nf & 6.X \\ \hline
+    R16                  & Code Qualität und Styleguide Einhaltung            & nf & 6.X \\ \hline
 
-    \multicolumn{4}{|c|}{\textbf{Soll-Anforderungen}}                             \\ \hline
+    \multicolumn{4}{|c|}{\textbf{Soll-Anforderungen}}                                    \\ \hline
 
-    R06                  & Tipps und Tricks                            & f  & 6.X \\ \hline
+    R06                  & Tipps und Tricks zur Reduktion des CO2-Fußabdrucks & f  & 6.X \\ \hline
+    R11                  & Anzeige von weiteren Quellen/Infos im CO2 Rechner  & f  & 6.X \\ \hline
 
-    \multicolumn{4}{|c|}{\textbf{Kann-Anforderungen}}                             \\ \hline
+    \multicolumn{4}{|c|}{\textbf{Kann-Anforderungen}}                                    \\ \hline
 
-    R07                  & Durchgeleitet werden                        & f  & 6.X \\ \hline
+    R07                  & Durchführung des CO2-Rechner-Workflows             & f  & 6.X \\ \hline
+    R08                  & Integration von Grafiken                           & f  & 6.X \\ \hline
+    R09                  & Visualisierung und Vergleich des CO2-Fußabdrucks   & f  & 6.X \\ \hline
     \caption{Übersicht der funktionalen und nicht-funktionalen Anforderungen}
     \\
 \end{longtable}
